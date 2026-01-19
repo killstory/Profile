@@ -7,6 +7,7 @@ const skills = [
   "Blockchain",
   "Data Science",
   "DeFi",
+  "Fund Management",
   "Knowledge Graphs",
   "NLP",
   "Risk Management",
