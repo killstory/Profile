@@ -3,14 +3,14 @@ import { SectionLabel } from "./SectionLabel";
 import { Award, BookOpen, GraduationCap } from "lucide-react";
 
 const skills = [
-  "Knowledge Graphs",
-  "Scientific Analysis", 
-  "Data Science",
   "AI/ML",
-  "DeFi",
   "Blockchain",
-  "Risk Management",
+  "Data Science",
+  "DeFi",
+  "Knowledge Graphs",
   "NLP",
+  "Risk Management",
+  "Scientific Analysis",
 ];
 
 const certifications = [
