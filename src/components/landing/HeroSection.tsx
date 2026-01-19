@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight, Download, Briefcase, Brain, Coins } from "lucide-react";
 import { Navigation } from "./Navigation";
 import { GridPattern } from "./GridPattern";
+import profileImage from "@/assets/paramet-profile.png";
 
 const roles = ["CIO @ AMS Fund", "Blockchain Consultant", "AI Researcher"];
 
@@ -92,39 +93,47 @@ export function HeroSection() {
             </motion.div>
           </div>
 
-          {/* Right: Visual */}
+          {/* Right: Profile Photo */}
           <div className="col-span-12 lg:col-span-5 relative">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.2 }}
-              className="relative aspect-square rounded-3xl overflow-hidden border border-border bg-card shadow-2xl group"
+              className="relative"
             >
-              {/* Expertise Cards */}
-              <div className="absolute inset-0 bg-background p-6 flex flex-col justify-center gap-4">
-                {[
-                  { icon: Coins, title: "DeFi & Investment", desc: "Strategic fund management & yield optimization" },
-                  { icon: Brain, title: "AI Research", desc: "Neural networks, NLP & data science" },
-                  { icon: Briefcase, title: "Web3 Consulting", desc: "Blockchain advisory & community growth" },
-                ].map((item, i) => (
-                  <motion.div
-                    key={item.title}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: 0.4 + i * 0.15 }}
-                    className="glass-panel p-5 rounded-2xl group/card hover:border-primary/30 transition-colors duration-300"
-                  >
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary shrink-0">
-                        <item.icon className="w-6 h-6" />
-                      </div>
-                      <div>
-                        <h3 className="text-foreground font-semibold mb-1">{item.title}</h3>
-                        <p className="text-muted-foreground text-sm">{item.desc}</p>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
+              {/* Profile Image Container */}
+              <div className="relative aspect-square max-w-md mx-auto">
+                {/* Decorative ring */}
+                <div className="absolute inset-0 rounded-full border-2 border-primary/20 animate-float" />
+                <div className="absolute inset-4 rounded-full border border-primary/10" />
+                
+                {/* Glow effect */}
+                <div className="absolute inset-0 rounded-full bg-primary/20 blur-3xl opacity-30" />
+                
+                {/* Image */}
+                <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-border shadow-2xl">
+                  <img
+                    src={profileImage}
+                    alt="Paramet Moonkaew"
+                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                  />
+                  
+                  {/* Overlay gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500" />
+                </div>
+                
+                {/* Floating badge */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.8 }}
+                  className="absolute -bottom-4 left-1/2 -translate-x-1/2 glass-panel px-6 py-3 rounded-full"
+                >
+                  <div className="flex items-center gap-2 text-primary text-sm font-mono">
+                    <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                    Open to opportunities
+                  </div>
+                </motion.div>
               </div>
             </motion.div>
           </div>
