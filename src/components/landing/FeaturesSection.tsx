@@ -41,7 +41,7 @@ const experiences = [
     company: "D1ckDAO",
     role: "AI Researcher",
     period: "Aug 2025 - Present",
-    location: "Thailand (Remote)",
+    location: "Thailand",
     description: "DeSci community focused on men's health. Supported research and product development of D1ckGPT, an AI terminal for science-aligned health information. Collaborated cross-functionally to improve UX, safety boundaries, and information quality.",
     highlights: ["AI Research", "Knowledge Graphs", "Healthcare", "DeSci"],
   },
