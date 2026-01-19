@@ -4,7 +4,7 @@ import { FaTwitter, FaGithub, FaLinkedin } from "react-icons/fa";
 const socials = [
   { name: "Twitter", href: "https://x.com/killstoryyy", icon: FaTwitter },
   { name: "LinkedIn", href: "https://www.linkedin.com/in/paramet-moonkaew", icon: FaLinkedin },
-  { name: "GitHub", href: "#", icon: FaGithub },
+  { name: "GitHub", href: "https://github.com/killstory", icon: FaGithub },
 ];
 
 export function Footer() {
@@ -21,7 +21,7 @@ export function Footer() {
             <h3 className="text-4xl md:text-5xl font-medium mb-8 max-w-lg text-left lg:text-right">
               Let's build something amazing together.
             </h3>
-            <a 
+            <a
               href="mailto:paramet.moon@gmail.com"
               className="group relative px-8 py-4 bg-primary text-primary-foreground rounded-full font-bold text-lg overflow-hidden lime-glow"
             >
