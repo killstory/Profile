@@ -5,6 +5,7 @@ import { ArrowLeft, ExternalLink } from "lucide-react";
 import d1ckdaoTeamImage from "@/assets/d1ckdao-desci-summit.jpeg";
 import spectreLabsCover from "@/assets/spectre-labs-cover.png";
 import amsFundCover from "@/assets/ams-fund-cover.png";
+import d1ckdaoCover from "@/assets/d1ckdao-cover.jpeg";
 
 const experienceDetails: Record<string, {
   title: string;
@@ -82,7 +83,7 @@ const experienceDetails: Record<string, {
     role: "AI Researcher",
     period: "August 2025 - Present",
     location: "Thailand",
-    image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=2670&auto=format&fit=crop",
+    image: d1ckdaoCover,
     description: "D1ckDAO is a DeSci community fixing men's sexual health — focusing on D1ck problems; ED, low testosterone, male infertility, and foreskin restoration and more.",
     responsibilities: [
       "Conduct AI research for health-related data analysis",

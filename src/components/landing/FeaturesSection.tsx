@@ -3,6 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import spectreLabsCover from "@/assets/spectre-labs-cover.png";
 import amsFundCover from "@/assets/ams-fund-cover.png";
+import d1ckdaoCover from "@/assets/d1ckdao-cover.jpeg";
 
 // Sorted by date: Present first, then by start month (most recent first)
 const experiences = [
@@ -25,7 +26,7 @@ const experiences = [
     category: "AI Researcher", 
     year: "Aug 2025 - Present",
     slug: "d1ckdao",
-    image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=2670&auto=format&fit=crop"
+    image: d1ckdaoCover
   },
   { 
     title: "GRVT", 
