@@ -12,6 +12,7 @@ import aiatCover from "@/assets/aiat-cover.jpg";
 import tecCover from "@/assets/tec-cover.jpg";
 import srichandCover from "@/assets/srichand-cover.jpg";
 import forruCover from "@/assets/forru-cover.jpg";
+import mahidolCover from "@/assets/mahidol-cover.jpg";
 
 const experienceDetails: Record<string, {
   title: string;
@@ -128,7 +129,7 @@ const experienceDetails: Record<string, {
     role: "Lead Researcher & Data Analyst",
     period: "August 2016 - August 2020",
     location: "Thailand",
-    image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=2670&auto=format&fit=crop",
+    image: mahidolCover,
     description: "Led research initiatives and data analysis at one of Thailand's premier research universities, contributing to botanical science publications.",
     responsibilities: [
       "Lead research projects in plant biology and genetics",

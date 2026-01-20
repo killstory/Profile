@@ -11,6 +11,7 @@ import aiatCover from "@/assets/aiat-cover.jpg";
 import tecCover from "@/assets/tec-cover.jpg";
 import srichandCover from "@/assets/srichand-cover.jpg";
 import forruCover from "@/assets/forru-cover.jpg";
+import mahidolCover from "@/assets/mahidol-cover.jpg";
 
 interface Experience {
   title: string;
@@ -19,6 +20,7 @@ interface Experience {
   slug: string;
   image: string;
   isLogo?: boolean;
+  logoStyle?: 'forru' | 'mahidol';
 }
 
 // Sorted by date: Present first, then by start month (most recent first)
@@ -85,14 +87,17 @@ const experiences: Experience[] = [
     year: "Jan 2019 - Jan 2020",
     slug: "forest-restoration",
     image: forruCover,
-    isLogo: true
+    isLogo: true,
+    logoStyle: 'forru'
   },
   { 
     title: "Mahidol University", 
     category: "Lead Researcher & Data Analyst", 
     year: "Aug 2016 - Aug 2020",
     slug: "mahidol-university",
-    image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=2670&auto=format&fit=crop"
+    image: mahidolCover,
+    isLogo: true,
+    logoStyle: 'mahidol'
   }
 ];
 
@@ -125,8 +130,10 @@ export function FeaturesSection() {
               {/* Image - Clickable */}
               <Link to={`/experience/${exp.slug}`}>
                 <div className={`relative aspect-[4/3] overflow-hidden rounded-2xl mb-6 ${
-                  exp.isLogo 
+                  exp.logoStyle === 'forru' 
                     ? 'bg-gradient-to-br from-emerald-50 to-green-100 flex items-center justify-center p-12 border border-border/50 shadow-inner' 
+                    : exp.logoStyle === 'mahidol'
+                    ? 'bg-gradient-to-br from-slate-50 to-blue-50 flex items-center justify-center p-10 border border-border/50 shadow-inner'
                     : ''
                 }`}>
                   <img
@@ -134,16 +141,28 @@ export function FeaturesSection() {
                     alt={exp.title}
                     className={`${
                       exp.isLogo 
-                        ? 'max-w-[70%] max-h-[70%] object-contain drop-shadow-md' 
+                        ? 'max-w-[65%] max-h-[65%] object-contain drop-shadow-lg' 
                         : 'w-full h-full object-cover'
                     } grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700`}
                   />
                   
                   {/* Overlay on hover */}
-                  <div className={`absolute inset-0 ${exp.isLogo ? 'bg-emerald-500/0 group-hover:bg-emerald-500/10' : 'bg-primary/0 group-hover:bg-primary/10'} transition-colors duration-500`} />
+                  <div className={`absolute inset-0 ${
+                    exp.logoStyle === 'forru' 
+                      ? 'bg-emerald-500/0 group-hover:bg-emerald-500/10' 
+                      : exp.logoStyle === 'mahidol'
+                      ? 'bg-blue-500/0 group-hover:bg-blue-500/10'
+                      : 'bg-primary/0 group-hover:bg-primary/10'
+                  } transition-colors duration-500`} />
                   
                   {/* Arrow */}
-                  <div className={`absolute top-4 right-4 w-12 h-12 rounded-full ${exp.isLogo ? 'bg-emerald-700 text-white' : 'bg-foreground text-background'} flex items-center justify-center opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300`}>
+                  <div className={`absolute top-4 right-4 w-12 h-12 rounded-full ${
+                    exp.logoStyle === 'forru' 
+                      ? 'bg-emerald-700 text-white' 
+                      : exp.logoStyle === 'mahidol'
+                      ? 'bg-blue-900 text-amber-400'
+                      : 'bg-foreground text-background'
+                  } flex items-center justify-center opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300`}>
                     <ArrowUpRight className="w-5 h-5" />
                   </div>
                 </div>
