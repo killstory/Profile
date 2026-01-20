@@ -25,16 +25,16 @@ export function HeroSection() {
       <Navigation />
 
       {/* Hero Content */}
-      <div className="flex-1 flex items-center justify-center px-6 md:px-12 py-20">
+      <div className="flex-1 flex items-center justify-center px-6 md:px-12 py-12 md:py-20">
         <div className="text-center max-w-6xl mx-auto">
           {/* Profile Image */}
           <motion.div
-            className="inline-block mb-8"
+            className="inline-block mb-6 md:mb-10"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
-            <div className="w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72 rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl">
+            <div className="w-32 h-32 md:w-48 md:h-48 lg:w-56 lg:h-56 rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl ring-4 ring-background">
               <img
                 src={profileImage}
                 alt="Paramet Moonkaew"
@@ -45,13 +45,13 @@ export function HeroSection() {
 
           {/* Massive Typography */}
           <motion.div
-            className="overflow-hidden"
+            className="overflow-hidden mb-6 md:mb-8"
             initial="initial"
             animate="animate"
             variants={containerAnim}
           >
             <motion.h1
-              className="text-[12vw] md:text-[10vw] lg:text-[9vw] font-bold tracking-tighter leading-[0.85] text-foreground"
+              className="text-[15vw] md:text-[12vw] lg:text-[10vw] font-bold tracking-tighter leading-[0.85] text-foreground"
             >
               {title.split('').map((char, i) => (
                 <motion.span
@@ -63,7 +63,7 @@ export function HeroSection() {
                 </motion.span>
               ))}
               <motion.span
-                className="inline-block text-primary align-super text-[3vw] font-normal ml-2"
+                className="inline-block text-primary align-super text-[4vw] md:text-[3vw] font-normal ml-1 md:ml-2"
                 variants={letterAnim}
               >
                 ®
@@ -71,19 +71,40 @@ export function HeroSection() {
             </motion.h1>
           </motion.div>
 
-          {/* Subtitle */}
-          <motion.p
-            className="mt-8 text-base md:text-lg lg:text-xl text-muted-foreground font-light tracking-wide whitespace-nowrap"
+          {/* Subtitle - Responsive Stack */}
+          <motion.div
+            className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-0"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.8 }}
           >
-            <span className="text-foreground">Strategic Capital Management</span>
-            <span className="mx-3 text-primary">|</span>
-            <span className="text-foreground">Web3 Advisory</span>
-            <span className="mx-3 text-primary">|</span>
-            <span className="text-foreground">AI Researcher</span>
-          </motion.p>
+            <span className="text-sm md:text-base lg:text-lg text-foreground font-medium tracking-wide">
+              Strategic Capital Management
+            </span>
+            <span className="hidden md:inline mx-4 text-primary text-lg">•</span>
+            <span className="text-sm md:text-base lg:text-lg text-foreground font-medium tracking-wide">
+              Web3 Advisory
+            </span>
+            <span className="hidden md:inline mx-4 text-primary text-lg">•</span>
+            <span className="text-sm md:text-base lg:text-lg text-foreground font-medium tracking-wide">
+              AI Researcher
+            </span>
+          </motion.div>
+
+          {/* CTA Button */}
+          <motion.div
+            className="mt-10 md:mt-12"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1, duration: 0.8 }}
+          >
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-full font-semibold text-base hover:brightness-110 transition-all cursor-scale"
+            >
+              Get in Touch
+            </a>
+          </motion.div>
         </div>
       </div>
     </div>
