@@ -73,10 +73,9 @@ export const ImageSlider = () => {
             <Link
               key={`${exp.slug}-${i}`}
               to={`/experience/${exp.slug}`}
-              className="flex-shrink-0 w-[320px] md:w-[400px] mx-3 group cursor-scale"
+              className="flex-shrink-0 w-[300px] md:w-[400px] h-[200px] md:h-[280px] mx-3 group cursor-scale"
             >
-              {/* Card matching FeaturesSection style */}
-              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl mb-4">
+              <div className="relative w-full h-full overflow-hidden rounded-2xl">
                 <img
                   src={exp.image}
                   alt={exp.title}
@@ -90,26 +89,6 @@ export const ImageSlider = () => {
                 <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-foreground text-background flex items-center justify-center opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300">
                   <ArrowUpRight className="w-4 h-4" />
                 </div>
-
-                {/* Present badge for current roles */}
-                {exp.year.includes('Present') && (
-                  <div className="absolute top-4 left-4 px-3 py-1 bg-primary/90 text-primary-foreground text-xs font-medium rounded-full">
-                    Active
-                  </div>
-                )}
-              </div>
-
-              {/* Info */}
-              <div className="flex items-start justify-between gap-4">
-                <div className="min-w-0">
-                  <h3 className="text-lg font-semibold text-foreground mb-1 group-hover:text-primary transition-colors truncate">
-                    {exp.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground truncate">{exp.category}</p>
-                </div>
-                <span className="text-muted-foreground font-mono text-xs whitespace-nowrap">
-                  {exp.year.split(' - ')[0]}
-                </span>
               </div>
             </Link>
           ))}
