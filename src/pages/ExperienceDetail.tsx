@@ -306,7 +306,7 @@ export default function ExperienceDetail() {
               className="mt-12"
             >
               <h2 className="text-xl font-semibold text-foreground mb-6">Gallery</h2>
-              <div className="grid gap-6">
+              <div className="grid gap-6 max-w-md">
                 {experience.gallery.map((item, i) => (
                   <div key={i} className="group overflow-hidden rounded-xl border border-border">
                     <img
@@ -314,8 +314,8 @@ export default function ExperienceDetail() {
                       alt={item.caption}
                       className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="p-4 bg-muted/30">
-                      <p className="text-center text-muted-foreground font-medium">{item.caption}</p>
+                    <div className="p-3 bg-muted/30">
+                      <p className="text-center text-sm text-muted-foreground font-medium">{item.caption}</p>
                     </div>
                   </div>
                 ))}
