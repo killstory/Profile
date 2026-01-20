@@ -95,7 +95,9 @@ const experiences: Experience[] = [
     category: "Lead Researcher & Data Analyst", 
     year: "Aug 2016 - Aug 2020",
     slug: "mahidol-university",
-    image: mahidolCover
+    image: mahidolCover,
+    isLogo: true,
+    logoStyle: 'mahidol'
   }
 ];
 
@@ -138,7 +140,9 @@ export function FeaturesSection() {
                     src={exp.image}
                     alt={exp.title}
                     className={`${
-                      exp.isLogo 
+                      exp.logoStyle === 'mahidol'
+                        ? 'max-w-[55%] max-h-[55%] object-contain drop-shadow-lg'
+                        : exp.isLogo 
                         ? 'max-w-[65%] max-h-[65%] object-contain drop-shadow-lg' 
                         : 'w-full h-full object-cover'
                     } grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700`}
