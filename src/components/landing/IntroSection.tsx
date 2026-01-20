@@ -18,21 +18,29 @@ export const IntroSection = () => {
   return <section className="bg-background px-6 md:px-12 py-24 lg:py-32">
       <div className="max-w-7xl mx-auto">
         {/* Statement */}
-        <motion.p className="text-3xl md:text-5xl lg:text-6xl font-light text-foreground leading-[1.2] tracking-tight max-w-5xl mb-20" initial={{
-        opacity: 0,
-        y: 40
-      }} whileInView={{
-        opacity: 1,
-        y: 0
-      }} viewport={{
-        once: true
-      }} transition={{
-        duration: 0.8
-      }}>
-          I'm <span className="text-primary font-serif italic">Met</span> — Chief Investment Officer managing strategic fund operations, applying extensive expertise in{" "}
-          <span className="text-primary">risk management</span>, investment strategies, and{" "}
-          <span className="text-primary">yield optimization</span>.
-        </motion.p>
+        <motion.div
+          className="max-w-5xl mb-20 space-y-8"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <p className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground tracking-tighter">
+            I'm <span className="text-primary font-serif italic">Met</span>.
+          </p>
+          <p className="text-xl md:text-2xl lg:text-3xl font-light text-muted-foreground leading-relaxed">
+            I manage strategic fund operations, applying extensive expertise in{" "}
+            <span className="text-foreground font-medium">risk management</span>,{" "}
+            <span className="text-foreground font-medium">investment strategies</span>, and{" "}
+            <span className="text-foreground font-medium">yield optimization</span>{" "}
+            to drive performance and growth.
+          </p>
+          <p className="text-lg md:text-xl lg:text-2xl font-light text-muted-foreground leading-relaxed">
+            In addition, I actively contribute to the{" "}
+            <span className="text-primary font-medium">Web3 ecosystem</span>{" "}
+            by serving as an Advisory Consultant for blockchain projects, fulfilling the role of Regional Lead, and conducting research as an AI Researcher.
+          </p>
+        </motion.div>
 
         {/* Roles */}
         <div className="flex flex-wrap gap-6 md:gap-10">
