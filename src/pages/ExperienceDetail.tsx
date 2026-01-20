@@ -8,6 +8,7 @@ import amsFundCover from "@/assets/ams-fund-cover.png";
 import d1ckdaoCover from "@/assets/d1ckdao-cover.jpeg";
 import grvtCover from "@/assets/grvt-cover.jpg";
 import talusCover from "@/assets/talus-cover.jpeg";
+import aiatCover from "@/assets/aiat-cover.jpg";
 
 const experienceDetails: Record<string, {
   title: string;
@@ -107,7 +108,7 @@ const experienceDetails: Record<string, {
     role: "AI Researcher",
     period: "September 2020 - December 2024",
     location: "Thailand",
-    image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=2670&auto=format&fit=crop",
+    image: aiatCover,
     description: "Working as a Super AI Engineer (AIAT), tackling challenges across various industries and business sectors.",
     responsibilities: [
       "Artificial Intelligence (AI) research and development",

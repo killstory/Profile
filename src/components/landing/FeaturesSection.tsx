@@ -7,6 +7,7 @@ import d1ckdaoCover from "@/assets/d1ckdao-cover.jpeg";
 import grvtCover from "@/assets/grvt-cover.jpg";
 import talusCover from "@/assets/talus-cover.jpeg";
 import talusThumbnail from "@/assets/talus-thumbnail.jpg";
+import aiatCover from "@/assets/aiat-cover.jpg";
 
 // Sorted by date: Present first, then by start month (most recent first)
 const experiences = [
@@ -50,7 +51,7 @@ const experiences = [
     category: "AI Researcher", 
     year: "Sep 2020 - Dec 2024",
     slug: "aiat",
-    image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=2670&auto=format&fit=crop"
+    image: aiatCover
   },
   { 
     title: "Srichand United Dispensary", 
