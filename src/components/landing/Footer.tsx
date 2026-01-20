@@ -13,14 +13,14 @@ const socials = [
     icon: FaXTwitter
   },
   {
-    name: "GitHub",
-    href: "https://github.com/killstory",
-    icon: FaGithub
-  },
-  {
     name: "Telegram",
     href: "http://t.me/killstory789",
     icon: FaTelegram
+  },
+  {
+    name: "GitHub",
+    href: "https://github.com/killstory",
+    icon: FaGithub
   }
 ];
 
