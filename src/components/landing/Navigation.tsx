@@ -2,7 +2,12 @@ import { useState } from "react";
 import { Menu, X, Plus } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const navLinks = ["About", "Experience", "Skills", "Contact"];
+const navLinks = [
+  { label: "About", href: "#intro" },
+  { label: "Experience", href: "#experience" },
+  { label: "Skills", href: "#skills" },
+  { label: "Contact", href: "#contact" }
+];
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -37,8 +42,8 @@ export function Navigation() {
             <div className="h-full flex flex-col items-center justify-center gap-8">
               {navLinks.map((link, i) => (
                 <motion.a
-                  key={link}
-                  href={`#${link.toLowerCase()}`}
+                  key={link.label}
+                  href={link.href}
                   onClick={() => setIsOpen(false)}
                   className="text-5xl md:text-7xl font-bold text-foreground hover:text-primary transition-colors cursor-scale"
                   initial={{ opacity: 0, y: 30 }}
@@ -46,7 +51,7 @@ export function Navigation() {
                   exit={{ opacity: 0, y: -30 }}
                   transition={{ delay: i * 0.1, duration: 0.4 }}
                 >
-                  {link}
+                  {link.label}
                 </motion.a>
               ))}
               
