@@ -26,7 +26,7 @@ const experienceDetails: Record<string, {
       "Committed to driving innovation, transparency, and institutional standards within the evolving global DeFi and digital asset ecosystem."
     ],
     links: [
-      { label: "AMS Fund Deck", url: "https://www.canva.com/design/DAG3iZln6OE/9YPMKWfTUHgAYFYr0GMYfQ/edit" }
+      { label: "AMS Fund Deck", url: "https://www.canva.com/design/DAG3iZln6OE/9YPMKWfTUHgAYFYr0GMYfQ/edit?utm_content=DAG3iZln6OE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" }
     ]
   },
   "spectre-labs": {
