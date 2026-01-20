@@ -2,62 +2,70 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
+// Sorted by date: Present first, then by start month (most recent first)
 const experiences = [
   { 
     title: "AMS Fund", 
     category: "Chief Investment Officer", 
-    year: "2025",
+    year: "Aug 2025 - Present",
     slug: "ams-fund",
     image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=2670&auto=format&fit=crop"
   },
   { 
     title: "Spectre Labs", 
     category: "Co-Founder", 
-    year: "2025",
+    year: "Aug 2025 - Present",
     slug: "spectre-labs",
     image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=2532&auto=format&fit=crop"
   },
   { 
-    title: "GRVT Exchange", 
-    category: "Consultant & Regional Lead", 
-    year: "2025",
+    title: "D1ckDAO", 
+    category: "AI Researcher", 
+    year: "Aug 2025 - Present",
+    slug: "d1ckdao",
+    image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=2670&auto=format&fit=crop"
+  },
+  { 
+    title: "GRVT", 
+    category: "Consultant", 
+    year: "Jul 2025 - Present",
     slug: "grvt-exchange",
     image: "https://images.unsplash.com/photo-1642790106117-e829e14a795f?q=80&w=2532&auto=format&fit=crop"
   },
   { 
     title: "Talus Labs", 
     category: "Regional Lead", 
-    year: "2025",
+    year: "Apr 2025 - Present",
     slug: "talus-labs",
     image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2532&auto=format&fit=crop"
   },
   { 
-    title: "D1ckDAO", 
-    category: "AI Researcher", 
-    year: "2025",
-    slug: "d1ckdao",
-    image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=2670&auto=format&fit=crop"
-  },
-  { 
     title: "AIAT", 
     category: "AI Researcher", 
-    year: "2020-2024",
+    year: "Sep 2020 - Dec 2024",
     slug: "aiat",
     image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=2670&auto=format&fit=crop"
   },
   { 
-    title: "Mahidol University", 
-    category: "Lead Researcher & Data Analyst", 
-    year: "2016-2020",
-    slug: "mahidol-university",
-    image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=2670&auto=format&fit=crop"
-  },
-  { 
     title: "Thailand e-Business Centre", 
     category: "Digital Marketing Analyst", 
-    year: "2020",
+    year: "Aug 2020 - Sep 2020",
     slug: "tec",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2670&auto=format&fit=crop"
+  },
+  { 
+    title: "Forest Restoration Unit", 
+    category: "Volunteer", 
+    year: "Jan 2019 - Jan 2020",
+    slug: "forest-restoration",
+    image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=2670&auto=format&fit=crop"
+  },
+  { 
+    title: "Mahidol University", 
+    category: "Lead Researcher & Data Analyst", 
+    year: "Aug 2016 - Aug 2020",
+    slug: "mahidol-university",
+    image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=2670&auto=format&fit=crop"
   }
 ];
 
@@ -76,7 +84,7 @@ export function FeaturesSection() {
           >
             Latest Experience.
           </motion.h2>
-          <span className="text-muted-foreground font-mono text-sm">( _08 )</span>
+          <span className="text-muted-foreground font-mono text-sm">( _09 )</span>
         </div>
 
         {/* Project Grid */}

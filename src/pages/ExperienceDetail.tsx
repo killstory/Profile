@@ -123,6 +123,20 @@ const experienceDetails: Record<string, {
       "Develop marketing analytics frameworks",
       "Create data-driven marketing strategies"
     ]
+  },
+  "forest-restoration": {
+    title: "Forest Restoration Unit",
+    role: "Volunteer",
+    period: "January 2019 - January 2020",
+    location: "Doi-Suthep, Thailand",
+    image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=2670&auto=format&fit=crop",
+    description: "Volunteer staff at Forest Restoration Unit in Doi-Suthep: Seedling Nursery, contributing to environmental conservation efforts.",
+    responsibilities: [
+      "Support seedling nursery operations",
+      "Participate in forest restoration activities",
+      "Assist with environmental conservation programs",
+      "Contribute to sustainable reforestation initiatives"
+    ]
   }
 };
 
