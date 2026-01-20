@@ -20,7 +20,7 @@ interface Experience {
   slug: string;
   image: string;
   isLogo?: boolean;
-  logoStyle?: 'forru' | 'mahidol';
+  logoStyle?: 'forru' | 'mahidol' | 'talus';
 }
 
 // Sorted by date: Present first, then by start month (most recent first)
@@ -58,7 +58,9 @@ const experiences: Experience[] = [
     category: "Regional Lead", 
     year: "Apr 2025 - Present",
     slug: "talus-labs",
-    image: talusThumbnail
+    image: talusThumbnail,
+    isLogo: true,
+    logoStyle: 'talus'
   },
   { 
     title: "AIAT", 
@@ -134,6 +136,8 @@ export function FeaturesSection() {
                     ? 'bg-gradient-to-br from-emerald-50 to-green-100 flex items-center justify-center p-12 border border-border/50 shadow-inner' 
                     : exp.logoStyle === 'mahidol'
                     ? 'bg-gradient-to-br from-slate-50 to-blue-50 flex items-center justify-center p-10 border border-border/50 shadow-inner'
+                    : exp.logoStyle === 'talus'
+                    ? 'bg-gradient-to-br from-orange-50 to-amber-100 flex items-center justify-center p-8 border border-border/50 shadow-inner'
                     : ''
                 }`}>
                   <img
@@ -142,6 +146,8 @@ export function FeaturesSection() {
                     className={`${
                       exp.logoStyle === 'mahidol'
                         ? 'max-w-[55%] max-h-[55%] object-contain drop-shadow-lg'
+                        : exp.logoStyle === 'talus'
+                        ? 'max-w-[60%] max-h-[60%] object-contain drop-shadow-lg'
                         : exp.isLogo 
                         ? 'max-w-[65%] max-h-[65%] object-contain drop-shadow-lg' 
                         : 'w-full h-full object-cover'
@@ -154,6 +160,8 @@ export function FeaturesSection() {
                       ? 'bg-emerald-500/0 group-hover:bg-emerald-500/10' 
                       : exp.logoStyle === 'mahidol'
                       ? 'bg-blue-500/0 group-hover:bg-blue-500/10'
+                      : exp.logoStyle === 'talus'
+                      ? 'bg-orange-500/0 group-hover:bg-orange-500/10'
                       : 'bg-primary/0 group-hover:bg-primary/10'
                   } transition-colors duration-500`} />
                   
@@ -163,6 +171,8 @@ export function FeaturesSection() {
                       ? 'bg-emerald-700 text-white' 
                       : exp.logoStyle === 'mahidol'
                       ? 'bg-blue-900 text-amber-400'
+                      : exp.logoStyle === 'talus'
+                      ? 'bg-orange-600 text-white'
                       : 'bg-foreground text-background'
                   } flex items-center justify-center opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300`}>
                     <ArrowUpRight className="w-5 h-5" />
