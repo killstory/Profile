@@ -1,37 +1,44 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, Briefcase, FlaskConical, BarChart3, Users, Leaf } from 'lucide-react';
+import { ArrowUpRight, Briefcase, FlaskConical, BarChart3, Users, Brain } from 'lucide-react';
 
-// Current/Recent roles matching experiences
+// All current roles (Present) matching experiences
 const currentRoles = [
   {
     name: 'AMS Fund',
     role: 'Chief Investment Officer',
+    period: 'Aug 2025 - Present',
     slug: 'ams-fund',
-    icon: BarChart3,
-    current: true
+    icon: BarChart3
   },
   {
     name: 'Spectre Labs',
     role: 'Co-Founder',
+    period: 'Aug 2025 - Present',
     slug: 'spectre-labs',
-    icon: FlaskConical,
-    current: true
+    icon: FlaskConical
+  },
+  {
+    name: 'D1ckDAO',
+    role: 'AI Researcher',
+    period: 'Aug 2025 - Present',
+    slug: 'd1ckdao',
+    icon: Brain
   },
   {
     name: 'GRVT',
     role: 'Consultant',
+    period: 'Jul 2025 - Present',
     slug: 'grvt-exchange',
-    icon: Briefcase,
-    current: true
+    icon: Briefcase
   },
   {
     name: 'Talus Labs',
     role: 'Regional Lead',
+    period: 'Apr 2025 - Present',
     slug: 'talus-labs',
-    icon: Users,
-    current: true
+    icon: Users
   }
 ];
 
@@ -89,43 +96,58 @@ export const IntroSection = () => {
 
         {/* Current Roles */}
         <div>
-          <motion.p
-            className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-6"
+          <motion.div
+            className="flex items-center justify-between mb-8"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            Currently Working With
-          </motion.p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="flex items-center gap-3">
+              <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+              <p className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">
+                Currently Working With
+              </p>
+            </div>
+            <span className="text-sm text-muted-foreground">
+              {currentRoles.length} Active Roles
+            </span>
+          </motion.div>
+
+          {/* Roles Grid - Responsive Layout */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {currentRoles.map((role, i) => (
               <motion.div
                 key={role.name}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.5 }}
+                transition={{ delay: i * 0.08, duration: 0.5 }}
               >
                 <Link
                   to={`/experience/${role.slug}`}
-                  className="group block p-5 bg-muted/20 hover:bg-muted/40 border border-border/50 hover:border-primary/50 rounded-xl transition-all cursor-scale"
+                  className="group flex items-center gap-4 p-4 bg-muted/10 hover:bg-muted/30 border border-border/30 hover:border-primary/50 rounded-xl transition-all cursor-scale"
                 >
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all">
-                      <role.icon className="w-5 h-5" />
-                    </div>
-                    <ArrowUpRight className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 group-hover:text-primary transition-all" />
+                  {/* Icon */}
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all shrink-0">
+                    <role.icon className="w-5 h-5" />
                   </div>
-                  <h3 className="text-lg font-semibold text-foreground mb-1 group-hover:text-primary transition-colors">
-                    {role.name}
-                  </h3>
-                  <p className="text-sm text-muted-foreground">{role.role}</p>
-                  {role.current && (
-                    <span className="inline-block mt-3 px-2.5 py-1 text-xs font-medium bg-primary/10 text-primary rounded-full">
-                      Present
-                    </span>
-                  )}
+
+                  {/* Content */}
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2">
+                      <h3 className="text-base font-semibold text-foreground group-hover:text-primary transition-colors truncate">
+                        {role.name}
+                      </h3>
+                      <ArrowUpRight className="w-3.5 h-3.5 text-muted-foreground opacity-0 group-hover:opacity-100 group-hover:text-primary transition-all shrink-0" />
+                    </div>
+                    <p className="text-sm text-muted-foreground truncate">{role.role}</p>
+                  </div>
+
+                  {/* Status Badge */}
+                  <span className="px-2.5 py-1 text-xs font-medium bg-primary/10 text-primary rounded-full shrink-0">
+                    Active
+                  </span>
                 </Link>
               </motion.div>
             ))}
