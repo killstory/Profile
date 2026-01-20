@@ -109,6 +109,20 @@ const experienceDetails: Record<string, {
       "Data analysis and statistical modeling for research findings",
       "Collaborate with international research communities"
     ]
+  },
+  "tec": {
+    title: "Thailand e-Business Centre (TeC)",
+    role: "Digital Marketing Analyst",
+    period: "August 2020 - September 2020",
+    location: "Thailand",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2670&auto=format&fit=crop",
+    description: "Digital Marketing Analytics and Optimization program at Thailand e-Business Centre.",
+    responsibilities: [
+      "Analyze digital marketing performance metrics",
+      "Optimize marketing campaigns based on data insights",
+      "Develop marketing analytics frameworks",
+      "Create data-driven marketing strategies"
+    ]
   }
 };
 
