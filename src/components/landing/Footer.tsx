@@ -1,10 +1,9 @@
 import { ArrowUpRight, Mail, MapPin } from "lucide-react";
-import { FaTwitter, FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaXTwitter, FaGithub, FaLinkedin } from "react-icons/fa6";
 
 const socials = [
-  { name: "Instagram", href: "https://instagram.com", icon: FaTwitter },
-  { name: "Twitter", href: "https://x.com/killstoryyy", icon: FaTwitter },
   { name: "LinkedIn", href: "https://www.linkedin.com/in/paramet-moonkaew", icon: FaLinkedin },
+  { name: "X", href: "https://x.com/killstoryyy", icon: FaXTwitter },
   { name: "GitHub", href: "https://github.com/killstory", icon: FaGithub },
 ];
 
@@ -35,8 +34,9 @@ export function Footer() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 group cursor-scale"
+                    className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-3 group cursor-scale"
                   >
+                    <social.icon className="w-5 h-5" />
                     {social.name}
                     <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </a>
