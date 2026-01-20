@@ -11,6 +11,7 @@ import grvtEsportCompetition from "@/assets/grvt-esport-competition.jpeg";
 import talusSuifestTeam from "@/assets/talus-suifest-team.jpeg";
 import talusSuiSeasonMeetup from "@/assets/talus-sui-season-meetup.jpeg";
 import spectreLabsCover from "@/assets/spectre-labs-cover.png";
+import tecCertificate from "@/assets/tec-certificate.png";
 import amsFundCover from "@/assets/ams-fund-cover.png";
 import d1ckdaoCover from "@/assets/d1ckdao-cover.jpeg";
 import grvtCover from "@/assets/grvt-cover.jpg";
@@ -184,6 +185,12 @@ const experienceDetails: Record<string, {
       "Optimize marketing campaigns based on data insights",
       "Develop marketing analytics frameworks",
       "Create data-driven marketing strategies"
+    ],
+    links: [
+      { label: "Thailand e-Business Center", url: "https://www.tec.work/" }
+    ],
+    gallery: [
+      { image: tecCertificate, caption: "Digital Marketing Analytics & Optimization" }
     ]
   },
   "forest-restoration": {
