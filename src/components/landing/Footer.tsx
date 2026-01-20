@@ -117,7 +117,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-muted-foreground text-sm pt-8 border-t border-border">
           <p>© 2025 Paramet Moonkaew. All rights reserved.</p>
-          <p>Designed & Built with Paramet</p>
+          <p>Designed & Built with <a href="https://www.linkedin.com/in/paramet-moonkaew" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline cursor-scale">Paramet</a></p>
         </div>
       </div>
     </footer>
