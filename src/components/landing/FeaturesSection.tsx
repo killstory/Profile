@@ -6,6 +6,7 @@ import amsFundCover from "@/assets/ams-fund-cover.png";
 import d1ckdaoCover from "@/assets/d1ckdao-cover.jpeg";
 import grvtCover from "@/assets/grvt-cover.jpg";
 import talusCover from "@/assets/talus-cover.jpeg";
+import talusThumbnail from "@/assets/talus-thumbnail.jpg";
 
 // Sorted by date: Present first, then by start month (most recent first)
 const experiences = [
@@ -42,7 +43,7 @@ const experiences = [
     category: "Regional Lead", 
     year: "Apr 2025 - Present",
     slug: "talus-labs",
-    image: talusCover
+    image: talusThumbnail
   },
   { 
     title: "AIAT", 
