@@ -373,50 +373,64 @@ export default function ExperienceDetail() {
           )}
 
           {/* Gallery */}
-          {experience.gallery && experience.gallery.length > 0 && (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.9, duration: 0.5 }}
-              className="mt-12"
-            >
-              <h2 className="text-xl font-semibold text-foreground mb-6">Gallery</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {experience.gallery.map((item, i) => {
-                  const ImageWrapper = item.url ? 'a' : 'div';
-                  const wrapperProps = item.url ? { href: item.url, target: "_blank", rel: "noopener noreferrer" } : {};
-                  
-                  return (
-                    <motion.div
-                      key={i}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 1 + i * 0.1, duration: 0.4 }}
-                      className="h-full"
-                    >
-                      <ImageWrapper 
-                        {...wrapperProps} 
-                        className={`group h-full flex flex-col overflow-hidden rounded-xl border border-border ${item.url ? 'cursor-pointer' : ''} hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10`}
+          {experience.gallery && experience.gallery.length > 0 && (() => {
+            const allSameCaption = experience.gallery.every(item => item.caption === experience.gallery![0].caption);
+            const sharedCaption = allSameCaption ? experience.gallery[0].caption : null;
+            
+            return (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.9, duration: 0.5 }}
+                className="mt-12"
+              >
+                <h2 className="text-xl font-semibold text-foreground mb-6">Gallery</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {experience.gallery.map((item, i) => {
+                    const ImageWrapper = item.url ? 'a' : 'div';
+                    const wrapperProps = item.url ? { href: item.url, target: "_blank", rel: "noopener noreferrer" } : {};
+                    
+                    return (
+                      <motion.div
+                        key={i}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 1 + i * 0.1, duration: 0.4 }}
+                        className="h-full"
                       >
-                        <div className="aspect-square overflow-hidden bg-muted/20 flex items-center justify-center p-4">
-                          <img
-                            src={item.image}
-                            alt={item.caption}
-                            className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
-                          />
-                        </div>
-                        <div className="min-h-[80px] flex items-center p-4 bg-muted/30 group-hover:bg-primary/5 transition-colors duration-300">
-                          <p className="text-center text-sm text-muted-foreground group-hover:text-foreground font-medium transition-colors w-full">
-                            {item.caption}
-                          </p>
-                        </div>
-                      </ImageWrapper>
-                    </motion.div>
-                  );
-                })}
-              </div>
-            </motion.div>
-          )}
+                        <ImageWrapper 
+                          {...wrapperProps} 
+                          className={`group h-full flex flex-col overflow-hidden rounded-xl border border-border ${item.url ? 'cursor-pointer' : ''} hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10`}
+                        >
+                          <div className="aspect-square overflow-hidden bg-muted/20 flex items-center justify-center p-4">
+                            <img
+                              src={item.image}
+                              alt={item.caption}
+                              className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
+                            />
+                          </div>
+                          {!sharedCaption && (
+                            <div className="min-h-[80px] flex items-center p-4 bg-muted/30 group-hover:bg-primary/5 transition-colors duration-300">
+                              <p className="text-center text-sm text-muted-foreground group-hover:text-foreground font-medium transition-colors w-full">
+                                {item.caption}
+                              </p>
+                            </div>
+                          )}
+                        </ImageWrapper>
+                      </motion.div>
+                    );
+                  })}
+                </div>
+                {sharedCaption && (
+                  <div className="mt-6 p-4 bg-muted/30 rounded-xl">
+                    <p className="text-center text-sm text-muted-foreground font-medium">
+                      {sharedCaption}
+                    </p>
+                  </div>
+                )}
+              </motion.div>
+            );
+          })()}
         </motion.div>
       </div>
     </div>
