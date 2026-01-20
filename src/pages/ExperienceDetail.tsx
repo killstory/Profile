@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 
 import d1ckdaoTeamImage from "@/assets/d1ckdao-desci-summit.jpeg";
+import d1ckdaoDesciUncorked from "@/assets/d1ckdao-desci-uncorked.jpeg";
 import grvtIrlMeetup from "@/assets/grvt-irl-meetup.png";
 import grvtEsportCompetition from "@/assets/grvt-esport-competition.jpeg";
 import talusSuifestTeam from "@/assets/talus-suifest-team.jpeg";
@@ -125,7 +126,8 @@ const experienceDetails: Record<string, {
       { label: "D1ckGPT on Bio Protocol", url: "https://app.bio.xyz/agents/d1ckgpt" }
     ],
     gallery: [
-      { image: d1ckdaoTeamImage, caption: "D1ckDAO Team in DeSci Summit", url: "https://x.com/killstoryyy/status/1972888989167460624" }
+      { image: d1ckdaoTeamImage, caption: "D1ckDAO Team in DeSci Summit", url: "https://x.com/killstoryyy/status/1972888989167460624" },
+      { image: d1ckdaoDesciUncorked, caption: "The DeSci UNCORKED Event by D1ckDAO and Binance TH", url: "https://x.com/D1ckDAO/status/1999547478732157038/photo/1" }
     ]
   },
   "aiat": {
