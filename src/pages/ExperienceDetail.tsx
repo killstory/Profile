@@ -1,6 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ExternalLink } from "lucide-react";
 
 const experienceDetails: Record<string, {
   title: string;
@@ -10,6 +10,7 @@ const experienceDetails: Record<string, {
   image: string;
   description: string;
   responsibilities: string[];
+  links?: { label: string; url: string }[];
 }> = {
   "ams-fund": {
     title: "AMS FUND",
@@ -23,6 +24,9 @@ const experienceDetails: Record<string, {
       "Lead capital allocation across yield stablecoin farming, liquidity provisioning, and protocol revenue share models to maximize capital efficiency.",
       "Establish robust risk management governance and systematic hedging mechanisms to safeguard principal and ensure operational resilience.",
       "Committed to driving innovation, transparency, and institutional standards within the evolving global DeFi and digital asset ecosystem."
+    ],
+    links: [
+      { label: "AMS Fund Deck", url: "https://www.canva.com/design/DAG3iZln6OE/9YPMKWfTUHgAYFYr0GMYfQ/edit" }
     ]
   },
   "spectre-labs": {
@@ -233,7 +237,7 @@ export default function ExperienceDetail() {
           </div>
 
           {/* Responsibilities */}
-          <div>
+          <div className="mb-12">
             <h2 className="text-xl font-semibold text-foreground mb-6">Key Responsibilities & Achievements</h2>
             <ul className="space-y-4">
               {experience.responsibilities.map((item, i) => (
@@ -250,6 +254,33 @@ export default function ExperienceDetail() {
               ))}
             </ul>
           </div>
+
+          {/* Links */}
+          {experience.links && experience.links.length > 0 && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8, duration: 0.5 }}
+            >
+              <h2 className="text-xl font-semibold text-foreground mb-6">Resources</h2>
+              <div className="flex flex-wrap gap-4">
+                {experience.links.map((link, i) => (
+                  <a
+                    key={i}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center gap-3 px-6 py-4 bg-muted/50 hover:bg-primary/10 border border-border hover:border-primary/50 rounded-xl transition-all duration-300"
+                  >
+                    <ExternalLink className="w-5 h-5 text-primary" />
+                    <span className="text-lg font-medium text-foreground group-hover:text-primary transition-colors">
+                      {link.label}
+                    </span>
+                  </a>
+                ))}
+              </div>
+            </motion.div>
+          )}
         </motion.div>
       </div>
     </div>
