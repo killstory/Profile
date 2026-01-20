@@ -2,49 +2,57 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
 
-// Use same experiences data as FeaturesSection
+// All experiences matching FeaturesSection
 const experiences = [
   { 
     title: "AMS Fund", 
-    category: "Chief Investment Officer", 
-    year: "Aug 2025 - Present",
     slug: "ams-fund",
     image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=2670&auto=format&fit=crop"
   },
   { 
     title: "Spectre Labs", 
-    category: "Co-Founder", 
-    year: "Aug 2025 - Present",
     slug: "spectre-labs",
     image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=2532&auto=format&fit=crop"
   },
   { 
     title: "D1ckDAO", 
-    category: "AI Researcher", 
-    year: "Aug 2025 - Present",
     slug: "d1ckdao",
     image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=2670&auto=format&fit=crop"
   },
   { 
     title: "GRVT", 
-    category: "Consultant", 
-    year: "Jul 2025 - Present",
     slug: "grvt-exchange",
     image: "https://images.unsplash.com/photo-1642790106117-e829e14a795f?q=80&w=2532&auto=format&fit=crop"
   },
   { 
     title: "Talus Labs", 
-    category: "Regional Lead", 
-    year: "Apr 2025 - Present",
     slug: "talus-labs",
     image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2532&auto=format&fit=crop"
   },
   { 
     title: "AIAT", 
-    category: "AI Researcher", 
-    year: "Sep 2020 - Dec 2024",
     slug: "aiat",
     image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=2670&auto=format&fit=crop"
+  },
+  { 
+    title: "Srichand United Dispensary", 
+    slug: "srichand",
+    image: "https://images.unsplash.com/photo-1596558450268-9c27524ba856?q=80&w=2670&auto=format&fit=crop"
+  },
+  { 
+    title: "Thailand e-Business Centre", 
+    slug: "tec",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2670&auto=format&fit=crop"
+  },
+  { 
+    title: "Forest Restoration Unit", 
+    slug: "forest-restoration",
+    image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=2670&auto=format&fit=crop"
+  },
+  { 
+    title: "Mahidol University", 
+    slug: "mahidol-university",
+    image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=2670&auto=format&fit=crop"
   }
 ];
 
