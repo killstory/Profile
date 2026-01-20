@@ -28,11 +28,14 @@ export const IntroSection = () => {
           <p className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground tracking-tighter">
             I'm <span className="text-primary font-serif italic">Met</span>.
           </p>
-          <p className="text-xl md:text-2xl lg:text-3xl font-light text-muted-foreground leading-relaxed">
+          <p className="text-lg md:text-xl lg:text-2xl font-light text-muted-foreground leading-relaxed">
             Specializing in{" "}
             <span className="text-primary font-medium">high level fund management</span> and{" "}
-            <span className="text-primary font-medium">operational excellence</span>.{" "}
-            I combine rigorous risk assessment with strategic yield optimization, while actively shaping the Web3 landscape through{" "}
+            <span className="text-primary font-medium">operational excellence</span>.
+          </p>
+          <p className="text-lg md:text-xl lg:text-2xl font-light text-muted-foreground leading-relaxed">
+            I combine rigorous risk assessment with strategic yield optimization, 
+            while actively shaping the Web3 landscape through{" "}
             <span className="text-primary font-medium">regional leadership</span> and advanced{" "}
             <span className="text-primary font-medium">AI research</span>.
           </p>
