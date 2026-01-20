@@ -11,6 +11,7 @@ import talusCover from "@/assets/talus-cover.jpeg";
 import aiatCover from "@/assets/aiat-cover.jpg";
 import tecCover from "@/assets/tec-cover.jpg";
 import srichandCover from "@/assets/srichand-cover.jpg";
+import forruCover from "@/assets/forru-cover.jpg";
 
 const experienceDetails: Record<string, {
   title: string;
@@ -152,12 +153,12 @@ const experienceDetails: Record<string, {
     ]
   },
   "forest-restoration": {
-    title: "Forest Restoration Unit",
+    title: "Forest Restoration Research Unit",
     role: "Volunteer",
     period: "January 2019 - January 2020",
     location: "Doi-Suthep, Thailand",
-    image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=2670&auto=format&fit=crop",
-    description: "Volunteer staff at Forest Restoration Unit in Doi-Suthep: Seedling Nursery, contributing to environmental conservation efforts.",
+    image: forruCover,
+    description: "Volunteer staff at Forest Restoration Research Unit in Doi-Suthep: Seedling Nursery, contributing to environmental conservation efforts.",
     responsibilities: [
       "Support seedling nursery operations",
       "Participate in forest restoration activities",

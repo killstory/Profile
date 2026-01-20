@@ -10,6 +10,7 @@ import talusThumbnail from "@/assets/talus-thumbnail.jpg";
 import aiatCover from "@/assets/aiat-cover.jpg";
 import tecCover from "@/assets/tec-cover.jpg";
 import srichandCover from "@/assets/srichand-cover.jpg";
+import forruCover from "@/assets/forru-cover.jpg";
 
 // Sorted by date: Present first, then by start month (most recent first)
 const experiences = [
@@ -70,11 +71,11 @@ const experiences = [
     image: tecCover
   },
   { 
-    title: "Forest Restoration Unit", 
+    title: "Forest Restoration Research Unit", 
     category: "Volunteer", 
     year: "Jan 2019 - Jan 2020",
     slug: "forest-restoration",
-    image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=2670&auto=format&fit=crop"
+    image: forruCover
   },
   { 
     title: "Mahidol University", 
