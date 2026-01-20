@@ -4,6 +4,7 @@ import { ArrowLeft, ExternalLink } from "lucide-react";
 
 import d1ckdaoTeamImage from "@/assets/d1ckdao-desci-summit.jpeg";
 import spectreLabsCover from "@/assets/spectre-labs-cover.png";
+import amsFundCover from "@/assets/ams-fund-cover.png";
 
 const experienceDetails: Record<string, {
   title: string;
@@ -21,7 +22,7 @@ const experienceDetails: Record<string, {
     role: "Chief Investment Officer",
     period: "August 2025 - Present",
     location: "Thailand",
-    image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=2670&auto=format&fit=crop",
+    image: amsFundCover,
     description: "AMS Fund is a private investment fund operated by our family office.",
     responsibilities: [
       "Oversee strategic fund management operations, delivering consistent and risk adjusted performance in decentralized finance markets.",

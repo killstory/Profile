@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import spectreLabsCover from "@/assets/spectre-labs-cover.png";
+import amsFundCover from "@/assets/ams-fund-cover.png";
 
 // Sorted by date: Present first, then by start month (most recent first)
 const experiences = [
@@ -10,7 +11,7 @@ const experiences = [
     category: "Chief Investment Officer", 
     year: "Aug 2025 - Present",
     slug: "ams-fund",
-    image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=2670&auto=format&fit=crop"
+    image: amsFundCover
   },
   { 
     title: "Spectre Labs", 
