@@ -13,21 +13,21 @@ export function Footer() {
     <footer id="contact" className="bg-background text-foreground px-6 md:px-12 pt-24 lg:pt-32 pb-12">
       <div className="max-w-7xl mx-auto">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 mb-20">
           {/* Brand */}
-          <div>
-            <h2 className="text-6xl md:text-8xl font-bold tracking-tighter text-foreground mb-6">
-              Paramet<span className="text-primary">®</span>
+          <div className="lg:col-span-6">
+            <h2 className="text-5xl md:text-7xl font-bold tracking-tighter text-foreground mb-6">
+              Paramet<span className="text-primary">.</span>
             </h2>
-            <p className="text-muted-foreground text-lg max-w-md">
-              CIO & AI Researcher specializing in DeFi, blockchain technology, and machine learning. 
-              Based in Bangkok, working globally.
+            <p className="text-muted-foreground text-base md:text-lg max-w-md leading-relaxed">
+              Strategic capital management and Web3 advisory. 
+              Specializing in fund operations, DeFi, and AI research.
             </p>
           </div>
 
           {/* Socials */}
-          <div>
-            <h3 className="text-foreground font-semibold mb-6">Socials</h3>
+          <div className="lg:col-span-3">
+            <h3 className="text-foreground font-semibold mb-6 text-sm uppercase tracking-wider">Connect</h3>
             <ul className="space-y-3">
               {socials.map((social) => (
                 <li key={social.name}>
@@ -35,7 +35,7 @@ export function Footer() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2 group cursor-scale"
+                    className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 group cursor-scale"
                   >
                     {social.name}
                     <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -46,13 +46,13 @@ export function Footer() {
           </div>
 
           {/* Contact */}
-          <div>
-            <h3 className="text-foreground font-semibold mb-6">Contact</h3>
+          <div className="lg:col-span-3">
+            <h3 className="text-foreground font-semibold mb-6 text-sm uppercase tracking-wider">Contact</h3>
             <ul className="space-y-3">
               <li>
                 <a
                   href="mailto:paramet.moon@gmail.com"
-                  className="text-muted-foreground hover:text-foreground transition-colors cursor-scale"
+                  className="text-muted-foreground hover:text-primary transition-colors cursor-scale"
                 >
                   paramet.moon@gmail.com
                 </a>
@@ -60,12 +60,13 @@ export function Footer() {
               <li>
                 <a
                   href="tel:+66819841878"
-                  className="text-muted-foreground hover:text-foreground transition-colors cursor-scale"
+                  className="text-muted-foreground hover:text-primary transition-colors cursor-scale"
                 >
                   +66 81 984 1878
                 </a>
               </li>
-              <li className="text-muted-foreground">
+              <li className="text-muted-foreground flex items-center gap-2">
+                <MapPin className="w-4 h-4" />
                 Bangkok, Thailand
               </li>
             </ul>
