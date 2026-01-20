@@ -359,29 +359,35 @@ export default function ExperienceDetail() {
               className="mt-12"
             >
               <h2 className="text-xl font-semibold text-foreground mb-6">Gallery</h2>
-              <div className={`grid gap-6 ${
+              <div className={`${
                 experience.gallery.length === 1 
-                  ? 'grid-cols-1 max-w-2xl' 
+                  ? 'flex justify-center' 
                   : experience.gallery.length === 2 
-                  ? 'grid-cols-1 md:grid-cols-2' 
-                  : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
+                  ? 'grid grid-cols-1 md:grid-cols-2 gap-6' 
+                  : 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'
               }`}>
                 {experience.gallery.map((item, i) => {
                   const ImageWrapper = item.url ? 'a' : 'div';
                   const wrapperProps = item.url ? { href: item.url, target: "_blank", rel: "noopener noreferrer" } : {};
+                  const isSingleImage = experience.gallery.length === 1;
+                  
                   return (
                     <motion.div
                       key={i}
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 1 + i * 0.1, duration: 0.4 }}
+                      className={isSingleImage ? 'w-full max-w-xl' : ''}
                     >
-                      <ImageWrapper {...wrapperProps} className="group overflow-hidden rounded-xl border border-border block cursor-pointer hover:border-primary/50 transition-colors duration-300">
-                        <div className="aspect-video overflow-hidden">
+                      <ImageWrapper 
+                        {...wrapperProps} 
+                        className={`group overflow-hidden rounded-xl border border-border block ${item.url ? 'cursor-pointer' : ''} hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10`}
+                      >
+                        <div className={`${isSingleImage ? 'aspect-[4/3]' : 'aspect-video'} overflow-hidden bg-muted/20`}>
                           <img
                             src={item.image}
                             alt={item.caption}
-                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
                           />
                         </div>
                         <div className="p-4 bg-muted/30 group-hover:bg-primary/5 transition-colors duration-300">
