@@ -73,12 +73,16 @@ export function HeroSection() {
 
           {/* Subtitle */}
           <motion.p
-            className="mt-8 text-xl md:text-2xl text-muted-foreground font-light max-w-2xl mx-auto"
+            className="mt-8 text-base md:text-lg lg:text-xl text-muted-foreground font-light tracking-wide whitespace-nowrap"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.8 }}
           >
-            Strategic Capital Management | Web3 Advisory | AI Researcher
+            <span className="text-foreground">Strategic Capital Management</span>
+            <span className="mx-3 text-primary">|</span>
+            <span className="text-foreground">Web3 Advisory</span>
+            <span className="mx-3 text-primary">|</span>
+            <span className="text-foreground">AI Researcher</span>
           </motion.p>
         </div>
       </div>
