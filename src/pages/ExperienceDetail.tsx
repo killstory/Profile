@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 
 import d1ckdaoTeamImage from "@/assets/d1ckdao-desci-summit.jpeg";
+import spectreLabsCover from "@/assets/spectre-labs-cover.png";
 
 const experienceDetails: Record<string, {
   title: string;
@@ -37,7 +38,7 @@ const experienceDetails: Record<string, {
     role: "Co-Founder",
     period: "August 2025 - Present",
     location: "Thailand",
-    image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=2532&auto=format&fit=crop",
+    image: spectreLabsCover,
     description: "Spectre Labs is a Thai growth agency for Blockchain projects. We provide both front-end and back-end solutions. We've already delivered results for multiple projects, connecting them with over 50% of Thailand's Crypto KOLs and building communities, content, and tools that drive meaningful growth.",
     responsibilities: [
       "Launched the GRVT Thailand Trading Competition, achieving 300+ registered traders and $1.84 Billions trading volume.",

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import spectreLabsCover from "@/assets/spectre-labs-cover.png";
 
 // Sorted by date: Present first, then by start month (most recent first)
 const experiences = [
@@ -16,7 +17,7 @@ const experiences = [
     category: "Co-Founder", 
     year: "Aug 2025 - Present",
     slug: "spectre-labs",
-    image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=2532&auto=format&fit=crop"
+    image: spectreLabsCover
   },
   { 
     title: "D1ckDAO", 
