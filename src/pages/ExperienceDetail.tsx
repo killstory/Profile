@@ -15,6 +15,9 @@ import tecCertificate from "@/assets/tec-certificate.png";
 import mahidolPlenaryAward from "@/assets/mahidol-plenary-award.png";
 import mahidolTurfpagAward from "@/assets/mahidol-turfpag-award.png";
 import mahidolSingaporeAward from "@/assets/mahidol-singapore-award.png";
+import forruVolunteer1 from "@/assets/forru-volunteer-1.jpg";
+import forruVolunteer2 from "@/assets/forru-volunteer-2.jpg";
+import forruVolunteer3 from "@/assets/forru-volunteer-3.jpg";
 import amsFundCover from "@/assets/ams-fund-cover.png";
 import d1ckdaoCover from "@/assets/d1ckdao-cover.jpeg";
 import grvtCover from "@/assets/grvt-cover.jpg";
@@ -216,6 +219,14 @@ const experienceDetails: Record<string, {
       "Participate in forest restoration activities",
       "Assist with environmental conservation programs",
       "Contribute to sustainable reforestation initiatives"
+    ],
+    links: [
+      { label: "FORRU", url: "https://www.forru.org/" }
+    ],
+    gallery: [
+      { image: forruVolunteer1, caption: "Volunteer staff at FORRU" },
+      { image: forruVolunteer2, caption: "Volunteer staff at FORRU" },
+      { image: forruVolunteer3, caption: "Volunteer staff at FORRU" }
     ]
   },
   "srichand": {
