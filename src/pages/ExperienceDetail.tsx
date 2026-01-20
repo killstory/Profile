@@ -13,7 +13,7 @@ const experienceDetails: Record<string, {
   description: string;
   responsibilities: string[];
   links?: { label: string; url: string }[];
-  gallery?: { image: string; caption: string }[];
+  gallery?: { image: string; caption: string; url?: string }[];
 }> = {
   "ams-fund": {
     title: "AMS FUND",
@@ -94,7 +94,7 @@ const experienceDetails: Record<string, {
       { label: "D1ckGPT on Bio Protocol", url: "https://app.bio.xyz/agents/d1ckgpt" }
     ],
     gallery: [
-      { image: d1ckdaoTeamImage, caption: "D1ckDAO Team in DeSci Summit" }
+      { image: d1ckdaoTeamImage, caption: "D1ckDAO Team in DeSci Summit", url: "https://x.com/killstoryyy/status/1972888989167460624" }
     ]
   },
   "aiat": {
@@ -307,18 +307,22 @@ export default function ExperienceDetail() {
             >
               <h2 className="text-xl font-semibold text-foreground mb-6">Gallery</h2>
               <div className="grid gap-6 max-w-md">
-                {experience.gallery.map((item, i) => (
-                  <div key={i} className="group overflow-hidden rounded-xl border border-border">
-                    <img
-                      src={item.image}
-                      alt={item.caption}
-                      className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="p-3 bg-muted/30">
-                      <p className="text-center text-sm text-muted-foreground font-medium">{item.caption}</p>
-                    </div>
-                  </div>
-                ))}
+                {experience.gallery.map((item, i) => {
+                  const ImageWrapper = item.url ? 'a' : 'div';
+                  const wrapperProps = item.url ? { href: item.url, target: "_blank", rel: "noopener noreferrer" } : {};
+                  return (
+                    <ImageWrapper key={i} {...wrapperProps} className="group overflow-hidden rounded-xl border border-border block cursor-pointer">
+                      <img
+                        src={item.image}
+                        alt={item.caption}
+                        className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="p-3 bg-muted/30">
+                        <p className="text-center text-sm text-muted-foreground font-medium">{item.caption}</p>
+                      </div>
+                    </ImageWrapper>
+                  );
+                })}
               </div>
             </motion.div>
           )}
