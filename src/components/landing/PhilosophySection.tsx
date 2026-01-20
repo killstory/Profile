@@ -5,7 +5,7 @@ const skills = [
   "Artificial Intelligence",
   "Blockchain",
   "Data Science",
-  "DeFi",
+  "Decentralized Finance",
   "Fund Management",
   "Recommendation Systems",
   "Risk Management",
