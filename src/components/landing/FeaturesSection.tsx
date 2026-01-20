@@ -5,6 +5,7 @@ import spectreLabsCover from "@/assets/spectre-labs-cover.png";
 import amsFundCover from "@/assets/ams-fund-cover.png";
 import d1ckdaoCover from "@/assets/d1ckdao-cover.jpeg";
 import grvtCover from "@/assets/grvt-cover.jpg";
+import talusCover from "@/assets/talus-cover.jpeg";
 
 // Sorted by date: Present first, then by start month (most recent first)
 const experiences = [
@@ -41,7 +42,7 @@ const experiences = [
     category: "Regional Lead", 
     year: "Apr 2025 - Present",
     slug: "talus-labs",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2532&auto=format&fit=crop"
+    image: talusCover
   },
   { 
     title: "AIAT", 

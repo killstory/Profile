@@ -7,6 +7,7 @@ import spectreLabsCover from "@/assets/spectre-labs-cover.png";
 import amsFundCover from "@/assets/ams-fund-cover.png";
 import d1ckdaoCover from "@/assets/d1ckdao-cover.jpeg";
 import grvtCover from "@/assets/grvt-cover.jpg";
+import talusCover from "@/assets/talus-cover.jpeg";
 
 const experienceDetails: Record<string, {
   title: string;
@@ -72,7 +73,7 @@ const experienceDetails: Record<string, {
     role: "Regional Lead",
     period: "April 2025 - Present",
     location: "United States",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2532&auto=format&fit=crop",
+    image: talusCover,
     description: "Talus Labs is the premier AI infra network powering AI Agents that compete and earn.",
     responsibilities: [
       "Lead Talus Thailand community",
