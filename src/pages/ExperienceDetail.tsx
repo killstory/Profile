@@ -41,6 +41,9 @@ const experienceDetails: Record<string, {
       "Hosted GRVT IRL meetup with 30 KOLs and collaborated with 5 of them to generate 30,000+ impressions across both crypto-newbie and crypto-native audiences.",
       "Supported Paradex \"Pass Tap\" Affiliate Program covering 50 KOLs and 1st Thailand representative. Organized face-to-face meetings with 20 KOLs and helped maintain $100 Millions committed trading volume per month.",
       "For Bio Protocol, led Thailand narrative and social momentum during TGE and optimized paid KOL targeting across crypto natives, newbies, and airdrop hunters. Delivered 30,000+ impressions and 300+ engagements with a balanced mix of audience segments."
+    ],
+    links: [
+      { label: "Spectre Labs Deck", url: "https://www.canva.com/design/DAG44P2Vf7g/38DlVjhhgOLMKVW9UQvkjg/edit?utm_content=DAG44P2Vf7g&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" }
     ]
   },
   "grvt-exchange": {
