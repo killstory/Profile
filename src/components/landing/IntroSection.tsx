@@ -30,11 +30,11 @@ export const IntroSection = () => {
           </p>
           <p className="text-xl md:text-2xl lg:text-3xl font-light text-muted-foreground leading-relaxed">
             Specializing in{" "}
-            <span className="text-foreground font-medium">high level fund management</span> and{" "}
-            <span className="text-foreground font-medium">operational excellence</span>.{" "}
-            I combine rigorous risk assessment with strategic yield optimization, while actively shaping the{" "}
-            <span className="text-primary font-medium">Web3 landscape</span>{" "}
-            through regional leadership and advanced AI research.
+            <span className="text-primary font-medium">high level fund management</span> and{" "}
+            <span className="text-primary font-medium">operational excellence</span>.{" "}
+            I combine rigorous risk assessment with strategic yield optimization, while actively shaping the Web3 landscape through{" "}
+            <span className="text-primary font-medium">regional leadership</span> and advanced{" "}
+            <span className="text-primary font-medium">AI research</span>.
           </p>
         </motion.div>
 
