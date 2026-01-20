@@ -53,8 +53,8 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <h3 className="text-2xl font-bold text-foreground mb-4">Paramet.</h3>
-            <p className="text-muted-foreground leading-relaxed max-w-sm">
+            <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-6">Paramet.</h3>
+            <p className="text-muted-foreground text-lg leading-relaxed max-w-md">
               Strategic capital management and Web3 advisory. Specializing in fund operations, DeFi, and AI research.
             </p>
           </div>
