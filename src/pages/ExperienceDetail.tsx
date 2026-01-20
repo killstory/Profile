@@ -125,7 +125,8 @@ const experienceDetails: Record<string, {
     links: [
       { label: "D1ckDAO", url: "https://x.com/D1ckDAO" },
       { label: "D1ckGPT", url: "https://x.com/D1ckGPT" },
-      { label: "D1ckGPT on Bio Protocol", url: "https://app.bio.xyz/agents/d1ckgpt" }
+      { label: "D1ckGPT on Bio Protocol", url: "https://app.bio.xyz/agents/d1ckgpt" },
+      { label: "The DeSci Uncorked", url: "https://luma.com/qogf3sg0" }
     ],
     gallery: [
       { image: d1ckdaoTeamImage, caption: "D1ckDAO Team in DeSci Summit", url: "https://x.com/killstoryyy/status/1972888989167460624" },
