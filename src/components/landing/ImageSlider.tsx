@@ -2,70 +2,47 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 
-// Import local gallery images
-import amsFundCover from '@/assets/ams-fund-cover.png';
-import spectreLabsCover from '@/assets/spectre-labs-cover.png';
-import d1ckdaoDeSciSummit from '@/assets/d1ckdao-desci-summit.jpeg';
-import grvtEsport from '@/assets/grvt-esport-competition.jpeg';
-import talusSuifest from '@/assets/talus-suifest-team.jpeg';
+// Import all gallery images
+import d1ckdaoDesciSummit from '@/assets/d1ckdao-desci-summit.jpeg';
+import d1ckdaoDesciUncorked from '@/assets/d1ckdao-desci-uncorked.jpeg';
+import aiatCertificate from '@/assets/aiat-certificate.png';
 import aiatTeam from '@/assets/aiat-team.jpg';
-import srichandCover from '@/assets/srichand-cover.jpg';
+import grvtIrlMeetup from '@/assets/grvt-irl-meetup.png';
+import grvtEsportCompetition from '@/assets/grvt-esport-competition.jpeg';
+import talusSuifestTeam from '@/assets/talus-suifest-team.jpeg';
+import talusSuiSeasonMeetup from '@/assets/talus-sui-season-meetup.jpeg';
 import tecCertificate from '@/assets/tec-certificate.png';
+import mahidolPlenaryAward from '@/assets/mahidol-plenary-award.png';
+import mahidolTurfpagAward from '@/assets/mahidol-turfpag-award.png';
+import mahidolSingaporeAward from '@/assets/mahidol-singapore-award.png';
 import forruVolunteer1 from '@/assets/forru-volunteer-1.jpg';
-import mahidolPlenary from '@/assets/mahidol-plenary-award.png';
+import forruVolunteer2 from '@/assets/forru-volunteer-2.jpg';
+import forruVolunteer3 from '@/assets/forru-volunteer-3.jpg';
 
-// Gallery images with captions and slugs
+// All gallery images from experiences (no cover/thumbnails)
 const galleryItems = [
-  { 
-    image: amsFundCover,
-    caption: "AMS Fund - Chief Investment Officer",
-    slug: "ams-fund"
-  },
-  { 
-    image: spectreLabsCover,
-    caption: "Spectre Labs - Co-Founder",
-    slug: "spectre-labs"
-  },
-  { 
-    image: d1ckdaoDeSciSummit,
-    caption: "D1ckDAO - DeSci Summit 2024",
-    slug: "d1ckdao"
-  },
-  { 
-    image: grvtEsport,
-    caption: "GRVT - Esport Competition",
-    slug: "grvt-exchange"
-  },
-  { 
-    image: talusSuifest,
-    caption: "Talus Labs - SuiFest Team",
-    slug: "talus-labs"
-  },
-  { 
-    image: aiatTeam,
-    caption: "AIAT - Research Team",
-    slug: "aiat"
-  },
-  { 
-    image: srichandCover,
-    caption: "Srichand United Dispensary",
-    slug: "srichand"
-  },
-  { 
-    image: tecCertificate,
-    caption: "TEC - Digital Marketing Certificate",
-    slug: "tec"
-  },
-  { 
-    image: forruVolunteer1,
-    caption: "FORRU - Volunteer Staff",
-    slug: "forest-restoration"
-  },
-  { 
-    image: mahidolPlenary,
-    caption: "Mahidol - Plenary Lecture Award",
-    slug: "mahidol-university"
-  }
+  // D1ckDAO
+  { image: d1ckdaoDesciSummit, caption: "D1ckDAO Team in DeSci Summit", slug: "d1ckdao" },
+  { image: d1ckdaoDesciUncorked, caption: "The DeSci UNCORKED Event", slug: "d1ckdao" },
+  // GRVT
+  { image: grvtIrlMeetup, caption: "GRVT IRL Meetup Thailand", slug: "grvt-exchange" },
+  { image: grvtEsportCompetition, caption: "GRVT E-Sport Trading Competition", slug: "grvt-exchange" },
+  // Talus
+  { image: talusSuifestTeam, caption: "Talus Thailand Team in Suifest", slug: "talus-labs" },
+  { image: talusSuiSeasonMeetup, caption: "Talus Thailand in Sui Season Meetup", slug: "talus-labs" },
+  // AIAT
+  { image: aiatCertificate, caption: "Super AI Engineer Certificate", slug: "aiat" },
+  { image: aiatTeam, caption: "My Super AI Engineer Team", slug: "aiat" },
+  // TEC
+  { image: tecCertificate, caption: "Digital Marketing Analytics Certificate", slug: "tec" },
+  // Mahidol
+  { image: mahidolPlenaryAward, caption: "Plenary Lecture Award", slug: "mahidol-university" },
+  { image: mahidolSingaporeAward, caption: "Singapore Symposium Award", slug: "mahidol-university" },
+  { image: mahidolTurfpagAward, caption: "TURFPaG 1st Place Award", slug: "mahidol-university" },
+  // FORRU
+  { image: forruVolunteer1, caption: "Volunteer staff at FORRU", slug: "forest-restoration" },
+  { image: forruVolunteer2, caption: "Volunteer staff at FORRU", slug: "forest-restoration" },
+  { image: forruVolunteer3, caption: "Volunteer staff at FORRU", slug: "forest-restoration" },
 ];
 
 export const ImageSlider = () => {
