@@ -78,7 +78,7 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.8 }}
           >
-            CIO & AI Researcher based in Bangkok.
+            Strategic Capital Management | Web3 Advisory | AI Researcher
           </motion.p>
         </div>
       </div>
