@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Award, BookOpen, GraduationCap, Sparkles } from "lucide-react";
 
 const skills = [
-  "AI/ML",
+  "Artificial Intelligence",
   "Blockchain",
   "Data Science",
   "DeFi",
