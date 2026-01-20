@@ -326,21 +326,38 @@ export default function ExperienceDetail() {
               className="mt-12"
             >
               <h2 className="text-xl font-semibold text-foreground mb-6">Gallery</h2>
-              <div className="grid gap-6 max-w-md">
+              <div className={`grid gap-6 ${
+                experience.gallery.length === 1 
+                  ? 'grid-cols-1 max-w-2xl' 
+                  : experience.gallery.length === 2 
+                  ? 'grid-cols-1 md:grid-cols-2' 
+                  : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
+              }`}>
                 {experience.gallery.map((item, i) => {
                   const ImageWrapper = item.url ? 'a' : 'div';
                   const wrapperProps = item.url ? { href: item.url, target: "_blank", rel: "noopener noreferrer" } : {};
                   return (
-                    <ImageWrapper key={i} {...wrapperProps} className="group overflow-hidden rounded-xl border border-border block cursor-pointer">
-                      <img
-                        src={item.image}
-                        alt={item.caption}
-                        className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
-                      <div className="p-3 bg-muted/30">
-                        <p className="text-center text-sm text-muted-foreground font-medium">{item.caption}</p>
-                      </div>
-                    </ImageWrapper>
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 1 + i * 0.1, duration: 0.4 }}
+                    >
+                      <ImageWrapper {...wrapperProps} className="group overflow-hidden rounded-xl border border-border block cursor-pointer hover:border-primary/50 transition-colors duration-300">
+                        <div className="aspect-video overflow-hidden">
+                          <img
+                            src={item.image}
+                            alt={item.caption}
+                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                          />
+                        </div>
+                        <div className="p-4 bg-muted/30 group-hover:bg-primary/5 transition-colors duration-300">
+                          <p className="text-center text-sm text-muted-foreground group-hover:text-foreground font-medium transition-colors">
+                            {item.caption}
+                          </p>
+                        </div>
+                      </ImageWrapper>
+                    </motion.div>
                   );
                 })}
               </div>
