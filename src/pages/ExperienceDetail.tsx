@@ -6,6 +6,7 @@ import d1ckdaoTeamImage from "@/assets/d1ckdao-desci-summit.jpeg";
 import grvtIrlMeetup from "@/assets/grvt-irl-meetup.png";
 import grvtEsportCompetition from "@/assets/grvt-esport-competition.jpeg";
 import talusSuifestTeam from "@/assets/talus-suifest-team.jpeg";
+import talusSuiSeasonMeetup from "@/assets/talus-sui-season-meetup.jpeg";
 import spectreLabsCover from "@/assets/spectre-labs-cover.png";
 import amsFundCover from "@/assets/ams-fund-cover.png";
 import d1ckdaoCover from "@/assets/d1ckdao-cover.jpeg";
@@ -101,7 +102,8 @@ const experienceDetails: Record<string, {
       { label: "Talus Thailand IRL Event", url: "https://luma.com/n13e5r3q" }
     ],
     gallery: [
-      { image: talusSuifestTeam, caption: "Talus Thailand Team in Suifest", url: "https://x.com/killstoryyy/status/1973698197680992319/photo/1" }
+      { image: talusSuifestTeam, caption: "Talus Thailand Team in Suifest", url: "https://x.com/killstoryyy/status/1973698197680992319/photo/1" },
+      { image: talusSuiSeasonMeetup, caption: "Talus Thailand Team in Sui Season Meetup", url: "https://x.com/killstoryyy/status/1933588805577302123/photo/1" }
     ]
   },
   "d1ckdao": {
