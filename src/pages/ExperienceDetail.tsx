@@ -137,6 +137,20 @@ const experienceDetails: Record<string, {
       "Assist with environmental conservation programs",
       "Contribute to sustainable reforestation initiatives"
     ]
+  },
+  "srichand": {
+    title: "Srichand United Dispensary Co.,Ltd.",
+    role: "Data Scientist",
+    period: "March 2021 - August 2021",
+    location: "Thailand",
+    image: "https://images.unsplash.com/photo-1596558450268-9c27524ba856?q=80&w=2670&auto=format&fit=crop",
+    description: "Contract position focusing on building recommendation systems for e-commerce platforms in the beauty industry.",
+    responsibilities: [
+      "Research and implement the recommendation systems on 1948Beauty.com",
+      "Apply Artificial Intelligence (AI) and Data Science techniques",
+      "Develop recommender systems for E-Commerce platform",
+      "Conduct research to optimize product recommendations"
+    ]
   }
 };
 
