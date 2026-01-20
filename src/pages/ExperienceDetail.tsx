@@ -4,6 +4,7 @@ import { ArrowLeft, ExternalLink } from "lucide-react";
 
 import d1ckdaoTeamImage from "@/assets/d1ckdao-desci-summit.jpeg";
 import grvtIrlMeetup from "@/assets/grvt-irl-meetup.png";
+import grvtEsportCompetition from "@/assets/grvt-esport-competition.jpeg";
 import spectreLabsCover from "@/assets/spectre-labs-cover.png";
 import amsFundCover from "@/assets/ams-fund-cover.png";
 import d1ckdaoCover from "@/assets/d1ckdao-cover.jpeg";
@@ -78,7 +79,8 @@ const experienceDetails: Record<string, {
       { label: "GRVT's Thailand Trading Campaign", url: "https://grvt.io/exchange/liquidity-league/TDC:33UHb5pCXnD4FIwyIRmNSKwe4tF" }
     ],
     gallery: [
-      { image: grvtIrlMeetup, caption: "GRVT IRL Meetup Thailand", url: "https://x.com/grvt_io/status/1971035911812255764" }
+      { image: grvtIrlMeetup, caption: "GRVT IRL Meetup Thailand", url: "https://x.com/grvt_io/status/1971035911812255764" },
+      { image: grvtEsportCompetition, caption: "GRVT E-Sport Trading Competition Thailand", url: "https://x.com/killstoryyy/status/1988590568239509729/photo/1" }
     ]
   },
   "talus-labs": {
