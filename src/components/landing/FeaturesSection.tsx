@@ -12,8 +12,17 @@ import tecCover from "@/assets/tec-cover.jpg";
 import srichandCover from "@/assets/srichand-cover.jpg";
 import forruCover from "@/assets/forru-cover.jpg";
 
+interface Experience {
+  title: string;
+  category: string;
+  year: string;
+  slug: string;
+  image: string;
+  isLogo?: boolean;
+}
+
 // Sorted by date: Present first, then by start month (most recent first)
-const experiences = [
+const experiences: Experience[] = [
   { 
     title: "AMS Fund", 
     category: "Chief Investment Officer", 
@@ -75,7 +84,8 @@ const experiences = [
     category: "Volunteer", 
     year: "Jan 2019 - Jan 2020",
     slug: "forest-restoration",
-    image: forruCover
+    image: forruCover,
+    isLogo: true
   },
   { 
     title: "Mahidol University", 
@@ -114,11 +124,11 @@ export function FeaturesSection() {
             >
               {/* Image - Clickable */}
               <Link to={`/experience/${exp.slug}`}>
-                <div className="relative aspect-[4/3] overflow-hidden rounded-2xl mb-6">
+                <div className={`relative aspect-[4/3] overflow-hidden rounded-2xl mb-6 ${exp.isLogo ? 'bg-white flex items-center justify-center p-8' : ''}`}>
                   <img
                     src={exp.image}
                     alt={exp.title}
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                    className={`${exp.isLogo ? 'w-3/4 h-3/4 object-contain' : 'w-full h-full object-cover'} grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700`}
                   />
                   
                   {/* Overlay on hover */}
