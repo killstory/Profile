@@ -1,10 +1,11 @@
 import { ArrowUpRight, Mail, MapPin } from "lucide-react";
-import { FaXTwitter, FaGithub, FaLinkedin } from "react-icons/fa6";
+import { FaXTwitter, FaGithub, FaLinkedin, FaTelegram } from "react-icons/fa6";
 
 const socials = [
   { name: "LinkedIn", href: "https://www.linkedin.com/in/paramet-moonkaew", icon: FaLinkedin },
   { name: "X", href: "https://x.com/killstoryyy", icon: FaXTwitter },
   { name: "GitHub", href: "https://github.com/killstory", icon: FaGithub },
+  { name: "Telegram", href: "http://t.me/killstory789", icon: FaTelegram },
 ];
 
 export function Footer() {
@@ -67,7 +68,7 @@ export function Footer() {
               </li>
               <li className="text-muted-foreground flex items-center gap-2">
                 <MapPin className="w-4 h-4" />
-                Bangkok, Thailand
+                Thailand
               </li>
             </ul>
           </div>
