@@ -1,64 +1,67 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowUpRight } from 'lucide-react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
-// All experiences matching FeaturesSection
-const experiences = [
+// Import local gallery images
+import amsFundCover from '@/assets/ams-fund-cover.png';
+import spectreLabsCover from '@/assets/spectre-labs-cover.png';
+import d1ckdaoDeSciSummit from '@/assets/d1ckdao-desci-summit.jpeg';
+import grvtEsport from '@/assets/grvt-esport-competition.jpeg';
+import talusSuifest from '@/assets/talus-suifest-team.jpeg';
+import aiatTeam from '@/assets/aiat-team.jpg';
+import srichandCover from '@/assets/srichand-cover.jpg';
+import tecCertificate from '@/assets/tec-certificate.png';
+import forruVolunteer1 from '@/assets/forru-volunteer-1.jpg';
+import mahidolPlenary from '@/assets/mahidol-plenary-award.png';
+
+// Gallery images with captions
+const galleryItems = [
   { 
-    title: "AMS Fund", 
-    slug: "ams-fund",
-    image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=2670&auto=format&fit=crop"
+    image: amsFundCover,
+    caption: "AMS Fund - Chief Investment Officer"
   },
   { 
-    title: "Spectre Labs", 
-    slug: "spectre-labs",
-    image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=2532&auto=format&fit=crop"
+    image: spectreLabsCover,
+    caption: "Spectre Labs - Co-Founder"
   },
   { 
-    title: "D1ckDAO", 
-    slug: "d1ckdao",
-    image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=2670&auto=format&fit=crop"
+    image: d1ckdaoDeSciSummit,
+    caption: "D1ckDAO - DeSci Summit 2024"
   },
   { 
-    title: "GRVT", 
-    slug: "grvt-exchange",
-    image: "https://images.unsplash.com/photo-1642790106117-e829e14a795f?q=80&w=2532&auto=format&fit=crop"
+    image: grvtEsport,
+    caption: "GRVT - Esport Competition"
   },
   { 
-    title: "Talus Labs", 
-    slug: "talus-labs",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2532&auto=format&fit=crop"
+    image: talusSuifest,
+    caption: "Talus Labs - SuiFest Team"
   },
   { 
-    title: "AIAT", 
-    slug: "aiat",
-    image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=2670&auto=format&fit=crop"
+    image: aiatTeam,
+    caption: "AIAT - Research Team"
   },
   { 
-    title: "Srichand United Dispensary", 
-    slug: "srichand",
-    image: "https://images.unsplash.com/photo-1596558450268-9c27524ba856?q=80&w=2670&auto=format&fit=crop"
+    image: srichandCover,
+    caption: "Srichand United Dispensary"
   },
   { 
-    title: "Thailand e-Business Centre", 
-    slug: "tec",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2670&auto=format&fit=crop"
+    image: tecCertificate,
+    caption: "TEC - Digital Marketing Certificate"
   },
   { 
-    title: "Forest Restoration Unit", 
-    slug: "forest-restoration",
-    image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=2670&auto=format&fit=crop"
+    image: forruVolunteer1,
+    caption: "FORRU - Volunteer Staff"
   },
   { 
-    title: "Mahidol University", 
-    slug: "mahidol-university",
-    image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=2670&auto=format&fit=crop"
+    image: mahidolPlenary,
+    caption: "Mahidol - Plenary Lecture Award"
   }
 ];
 
 export const ImageSlider = () => {
-  // Triple duplicate for seamless loop with all images visible
-  const duplicatedExperiences = [...experiences, ...experiences, ...experiences];
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  
+  // Triple duplicate for seamless loop
+  const duplicatedItems = [...galleryItems, ...galleryItems, ...galleryItems];
 
   return (
     <div className="w-full py-12 overflow-hidden bg-background border-y border-border">
@@ -77,28 +80,41 @@ export const ImageSlider = () => {
       
       <div className="slider-container">
         <div className="flex animate-marquee" style={{ width: 'fit-content' }}>
-          {duplicatedExperiences.map((exp, i) => (
-            <Link
-              key={`${exp.slug}-${i}`}
-              to={`/experience/${exp.slug}`}
-              className="flex-shrink-0 w-[280px] md:w-[350px] h-[180px] md:h-[240px] mx-2 group cursor-scale"
+          {duplicatedItems.map((item, i) => (
+            <div
+              key={`gallery-${i}`}
+              className="flex-shrink-0 w-[280px] md:w-[350px] h-[180px] md:h-[240px] mx-2 cursor-scale"
+              onMouseEnter={() => setHoveredIndex(i)}
+              onMouseLeave={() => setHoveredIndex(null)}
             >
               <div className="relative w-full h-full overflow-hidden rounded-xl">
                 <img
-                  src={exp.image}
-                  alt={exp.title}
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                  src={item.image}
+                  alt={item.caption}
+                  className="w-full h-full object-cover grayscale hover:grayscale-0 hover:scale-105 transition-all duration-700"
                 />
                 
-                {/* Overlay on hover */}
-                <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-500" />
+                {/* Gradient overlay for caption readability */}
+                <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500" />
                 
-                {/* Arrow */}
-                <div className="absolute top-3 right-3 w-9 h-9 rounded-full bg-foreground text-background flex items-center justify-center opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300">
-                  <ArrowUpRight className="w-4 h-4" />
-                </div>
+                {/* Caption on hover */}
+                <AnimatePresence>
+                  {hoveredIndex === i && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                      className="absolute bottom-0 left-0 right-0 p-4"
+                    >
+                      <p className="text-foreground font-medium text-sm md:text-base">
+                        {item.caption}
+                      </p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
       </div>
