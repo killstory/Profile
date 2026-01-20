@@ -394,8 +394,8 @@ export default function ExperienceDetail() {
                             className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
                           />
                         </div>
-                        <div className="flex-1 flex items-center p-4 bg-muted/30 group-hover:bg-primary/5 transition-colors duration-300">
-                          <p className="text-center text-sm text-muted-foreground group-hover:text-foreground font-medium transition-colors w-full line-clamp-3">
+                        <div className="min-h-[80px] flex items-center p-4 bg-muted/30 group-hover:bg-primary/5 transition-colors duration-300">
+                          <p className="text-center text-sm text-muted-foreground group-hover:text-foreground font-medium transition-colors w-full">
                             {item.caption}
                           </p>
                         </div>
