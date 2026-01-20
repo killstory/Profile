@@ -120,7 +120,7 @@ export function PhilosophySection() {
                 Mahidol University
               </p>
               <p className="text-muted-foreground text-lg">
-                Bachelor's Degree in Botany/Plant Biology
+                Bachelor of Science (Plant Science)
               </p>
               <p className="text-primary font-mono text-sm">2015 - 2018</p>
               <div className="pt-4 border-t border-border">
