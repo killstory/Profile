@@ -71,6 +71,10 @@ const experienceDetails: Record<string, {
       "Increase GRVT's Thailand trading volume to $1.84 Billions through Trading Campaign.",
       "Boost brand visibility with the first ever GRVT E-Sport Trading Competition.",
       "Expand the platform's user base in Thailand."
+    ],
+    links: [
+      { label: "GRVT", url: "https://grvt.io/" },
+      { label: "GRVT's Thailand Trading Campaign", url: "https://grvt.io/exchange/liquidity-league/TDC:33UHb5pCXnD4FIwyIRmNSKwe4tF" }
     ]
   },
   "talus-labs": {
