@@ -124,18 +124,26 @@ export function FeaturesSection() {
             >
               {/* Image - Clickable */}
               <Link to={`/experience/${exp.slug}`}>
-                <div className={`relative aspect-[4/3] overflow-hidden rounded-2xl mb-6 ${exp.isLogo ? 'bg-white flex items-center justify-center p-8' : ''}`}>
+                <div className={`relative aspect-[4/3] overflow-hidden rounded-2xl mb-6 ${
+                  exp.isLogo 
+                    ? 'bg-gradient-to-br from-emerald-50 to-green-100 flex items-center justify-center p-12 border border-border/50 shadow-inner' 
+                    : ''
+                }`}>
                   <img
                     src={exp.image}
                     alt={exp.title}
-                    className={`${exp.isLogo ? 'w-3/4 h-3/4 object-contain' : 'w-full h-full object-cover'} grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700`}
+                    className={`${
+                      exp.isLogo 
+                        ? 'max-w-[70%] max-h-[70%] object-contain drop-shadow-md' 
+                        : 'w-full h-full object-cover'
+                    } grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700`}
                   />
                   
                   {/* Overlay on hover */}
-                  <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-500" />
+                  <div className={`absolute inset-0 ${exp.isLogo ? 'bg-emerald-500/0 group-hover:bg-emerald-500/10' : 'bg-primary/0 group-hover:bg-primary/10'} transition-colors duration-500`} />
                   
                   {/* Arrow */}
-                  <div className="absolute top-4 right-4 w-12 h-12 rounded-full bg-foreground text-background flex items-center justify-center opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                  <div className={`absolute top-4 right-4 w-12 h-12 rounded-full ${exp.isLogo ? 'bg-emerald-700 text-white' : 'bg-foreground text-background'} flex items-center justify-center opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300`}>
                     <ArrowUpRight className="w-5 h-5" />
                   </div>
                 </div>
