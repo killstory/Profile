@@ -1,60 +1,70 @@
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Plus } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+
 const navLinks = ["About", "Experience", "Skills", "Contact"];
+
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
-  return <nav className="relative z-50 px-6 md:px-12 py-6 flex justify-between items-center w-full">
+
+  return (
+    <nav className="relative z-50 px-6 md:px-12 py-8 flex justify-between items-center w-full">
       {/* Logo */}
-      <div className="flex items-center gap-3 group cursor-pointer">
-        <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center relative overflow-hidden lime-glow transition-transform group-hover:rotate-12 duration-300">
-          <div className="absolute inset-0 bg-primary-foreground/10 transform -skew-x-12 translate-x-full group-hover:translate-x-[-200%] transition-transform duration-700" />
-          <span className="text-primary-foreground font-bold text-xl font-mono relative z-10">M</span>
-        </div>
-        <span className="text-foreground font-bold tracking-tight text-lg hidden sm:block">
-          Met<span className="text-primary">.</span>
+      <a href="#" className="flex items-center gap-2 group cursor-pointer">
+        <span className="text-foreground text-2xl font-bold tracking-tighter">
+          pm
         </span>
-      </div>
+      </a>
 
-      {/* Desktop Links */}
-      <div className="hidden lg:flex items-center gap-1 glass-panel p-1.5 rounded-full">
-        {navLinks.map(link => <button key={link} className="px-5 py-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-all text-sm font-medium">
-            {link}
-          </button>)}
-      </div>
+      {/* Desktop Menu Button */}
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-12 h-12 rounded-full border border-border flex items-center justify-center text-foreground hover:bg-foreground hover:text-background transition-all duration-300 cursor-scale"
+      >
+        {isOpen ? <X className="w-5 h-5" /> : <Plus className="w-5 h-5" />}
+      </button>
 
-      {/* Actions */}
-      <div className="flex items-center gap-4">
-        
-        <a href="mailto:paramet.moon@gmail.com" className="hidden sm:flex bg-foreground text-background px-5 py-2.5 rounded-full font-bold text-sm hover:bg-primary hover:text-primary-foreground transition-colors duration-300">
-          Get in Touch
-        </a>
-        <button onClick={() => setIsOpen(!isOpen)} className="p-3 rounded-full glass-panel text-foreground hover:bg-muted/50 transition-colors lg:hidden">
-          {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-        </button>
-      </div>
-
-      {/* Mobile Menu */}
+      {/* Fullscreen Menu */}
       <AnimatePresence>
-        {isOpen && <motion.div initial={{
-        opacity: 0,
-        y: -20
-      }} animate={{
-        opacity: 1,
-        y: 0
-      }} exit={{
-        opacity: 0,
-        y: -20
-      }} className="absolute top-full left-4 right-4 mt-2 glass-panel rounded-2xl p-4 lg:hidden">
-            <div className="flex flex-col gap-2">
-              {navLinks.map(link => <button key={link} className="px-4 py-3 rounded-xl text-foreground hover:bg-muted/50 transition-all text-left font-medium">
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 bg-background z-40"
+          >
+            <div className="h-full flex flex-col items-center justify-center gap-8">
+              {navLinks.map((link, i) => (
+                <motion.a
+                  key={link}
+                  href={`#${link.toLowerCase()}`}
+                  onClick={() => setIsOpen(false)}
+                  className="text-5xl md:text-7xl font-bold text-foreground hover:text-primary transition-colors cursor-scale"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -30 }}
+                  transition={{ delay: i * 0.1, duration: 0.4 }}
+                >
                   {link}
-                </button>)}
-              <a href="mailto:paramet.moon@gmail.com" className="mt-2 bg-primary text-primary-foreground px-4 py-3 rounded-xl font-bold text-sm text-center">
+                </motion.a>
+              ))}
+              
+              <motion.a
+                href="mailto:paramet.moon@gmail.com"
+                onClick={() => setIsOpen(false)}
+                className="mt-8 px-8 py-4 bg-primary text-primary-foreground rounded-full font-bold text-lg hover:brightness-110 transition-all cursor-scale"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -30 }}
+                transition={{ delay: 0.4, duration: 0.4 }}
+              >
                 Get in Touch
-              </a>
+              </motion.a>
             </div>
-          </motion.div>}
+          </motion.div>
+        )}
       </AnimatePresence>
-    </nav>;
+    </nav>
+  );
 }

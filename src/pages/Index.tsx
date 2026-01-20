@@ -1,21 +1,26 @@
-import { ScrollProgress } from "@/components/landing/ScrollProgress";
 import { HeroSection } from "@/components/landing/HeroSection";
+import { IntroSection } from "@/components/landing/IntroSection";
+import { ImageSlider } from "@/components/landing/ImageSlider";
 import { FeaturesSection } from "@/components/landing/FeaturesSection";
 import { PhilosophySection } from "@/components/landing/PhilosophySection";
 import { Footer } from "@/components/landing/Footer";
+import { Cursor } from "@/components/landing/Cursor";
 
 const Index = () => {
   return (
-    <div className="min-h-screen w-full flex flex-col items-center bg-background font-sans overflow-x-hidden">
-      <ScrollProgress />
+    <div className="min-h-screen w-full bg-background font-sans overflow-x-hidden">
+      {/* Custom Cursor */}
+      <Cursor />
 
-      {/* Main Container */}
-      <div className="relative w-full max-w-[1800px] bg-card md:rounded-4xl md:m-4 lg:m-6 overflow-hidden shadow-2xl ring-1 ring-border flex flex-col min-h-screen">
+      {/* Main Content */}
+      <main>
         <HeroSection />
+        <IntroSection />
+        <ImageSlider />
         <FeaturesSection />
         <PhilosophySection />
         <Footer />
-      </div>
+      </main>
     </div>
   );
 };
