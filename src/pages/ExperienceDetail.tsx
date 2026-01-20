@@ -2,6 +2,8 @@ import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 
+import d1ckdaoTeamImage from "@/assets/d1ckdao-desci-summit.jpeg";
+
 const experienceDetails: Record<string, {
   title: string;
   role: string;
@@ -11,6 +13,7 @@ const experienceDetails: Record<string, {
   description: string;
   responsibilities: string[];
   links?: { label: string; url: string }[];
+  gallery?: { image: string; caption: string }[];
 }> = {
   "ams-fund": {
     title: "AMS FUND",
@@ -81,8 +84,17 @@ const experienceDetails: Record<string, {
     description: "D1ckDAO is a DeSci community fixing men's sexual health — focusing on D1ck problems; ED, low testosterone, male infertility, and foreskin restoration and more.",
     responsibilities: [
       "Conduct AI research for health-related data analysis",
-      "Develop machine learning models for health insights",
+      "Supported the research and product development of D1ckGPT, an AI terminal designed to help users navigate men's sexual health information",
+      "Collaborated with contributors (research, product, community) to improve user experience, safety boundaries, and information quality at D1ckDAO",
       "Contribute to decentralized science (DeSci) initiatives"
+    ],
+    links: [
+      { label: "D1ckDAO", url: "https://x.com/D1ckDAO" },
+      { label: "D1ckGPT", url: "https://x.com/D1ckGPT" },
+      { label: "D1ckGPT on Bio Protocol", url: "https://app.bio.xyz/agents/d1ckgpt" }
+    ],
+    gallery: [
+      { image: d1ckdaoTeamImage, caption: "D1ckDAO Team in DeSci Summit" }
     ]
   },
   "aiat": {
@@ -280,6 +292,32 @@ export default function ExperienceDetail() {
                       {link.label}
                     </span>
                   </a>
+                ))}
+              </div>
+            </motion.div>
+          )}
+
+          {/* Gallery */}
+          {experience.gallery && experience.gallery.length > 0 && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.9, duration: 0.5 }}
+              className="mt-12"
+            >
+              <h2 className="text-xl font-semibold text-foreground mb-6">Gallery</h2>
+              <div className="grid gap-6">
+                {experience.gallery.map((item, i) => (
+                  <div key={i} className="group overflow-hidden rounded-xl border border-border">
+                    <img
+                      src={item.image}
+                      alt={item.caption}
+                      className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="p-4 bg-muted/30">
+                      <p className="text-center text-muted-foreground font-medium">{item.caption}</p>
+                    </div>
+                  </div>
                 ))}
               </div>
             </motion.div>
