@@ -29,16 +29,12 @@ export const IntroSection = () => {
             I'm <span className="text-primary font-serif italic">Met</span>.
           </p>
           <p className="text-xl md:text-2xl lg:text-3xl font-light text-muted-foreground leading-relaxed">
-            I manage strategic fund operations, applying extensive expertise in{" "}
-            <span className="text-foreground font-medium">risk management</span>,{" "}
-            <span className="text-foreground font-medium">investment strategies</span>, and{" "}
-            <span className="text-foreground font-medium">yield optimization</span>{" "}
-            to drive performance and growth.
-          </p>
-          <p className="text-lg md:text-xl lg:text-2xl font-light text-muted-foreground leading-relaxed">
-            In addition, I actively contribute to the{" "}
-            <span className="text-primary font-medium">Web3 ecosystem</span>{" "}
-            by serving as an Advisory Consultant for blockchain projects, fulfilling the role of Regional Lead, and conducting research as an AI Researcher.
+            Specializing in{" "}
+            <span className="text-foreground font-medium">high level fund management</span> and{" "}
+            <span className="text-foreground font-medium">operational excellence</span>.{" "}
+            I combine rigorous risk assessment with strategic yield optimization, while actively shaping the{" "}
+            <span className="text-primary font-medium">Web3 landscape</span>{" "}
+            through regional leadership and advanced AI research.
           </p>
         </motion.div>
 
