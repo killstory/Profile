@@ -95,9 +95,7 @@ const experiences: Experience[] = [
     category: "Lead Researcher & Data Analyst", 
     year: "Aug 2016 - Aug 2020",
     slug: "mahidol-university",
-    image: mahidolCover,
-    isLogo: true,
-    logoStyle: 'mahidol'
+    image: mahidolCover
   }
 ];
 
