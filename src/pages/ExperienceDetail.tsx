@@ -10,6 +10,7 @@ import grvtCover from "@/assets/grvt-cover.jpg";
 import talusCover from "@/assets/talus-cover.jpeg";
 import aiatCover from "@/assets/aiat-cover.jpg";
 import tecCover from "@/assets/tec-cover.jpg";
+import srichandCover from "@/assets/srichand-cover.jpg";
 
 const experienceDetails: Record<string, {
   title: string;
@@ -169,7 +170,7 @@ const experienceDetails: Record<string, {
     role: "Data Scientist",
     period: "March 2021 - August 2021",
     location: "Thailand",
-    image: "https://images.unsplash.com/photo-1596558450268-9c27524ba856?q=80&w=2670&auto=format&fit=crop",
+    image: srichandCover,
     description: "Contract position focusing on building recommendation systems for e-commerce platforms in the beauty industry.",
     responsibilities: [
       "Research and implement the recommendation systems on 1948Beauty.com",

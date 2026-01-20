@@ -9,6 +9,7 @@ import talusCover from "@/assets/talus-cover.jpeg";
 import talusThumbnail from "@/assets/talus-thumbnail.jpg";
 import aiatCover from "@/assets/aiat-cover.jpg";
 import tecCover from "@/assets/tec-cover.jpg";
+import srichandCover from "@/assets/srichand-cover.jpg";
 
 // Sorted by date: Present first, then by start month (most recent first)
 const experiences = [
@@ -59,7 +60,7 @@ const experiences = [
     category: "Data Scientist", 
     year: "Mar 2021 - Aug 2021",
     slug: "srichand",
-    image: "https://images.unsplash.com/photo-1596558450268-9c27524ba856?q=80&w=2670&auto=format&fit=crop"
+    image: srichandCover
   },
   { 
     title: "Thailand e-Business Centre", 
