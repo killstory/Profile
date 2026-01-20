@@ -51,6 +51,13 @@ const experiences = [
     year: "2016-2020",
     slug: "mahidol-university",
     image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=2670&auto=format&fit=crop"
+  },
+  { 
+    title: "Thailand e-Business Centre", 
+    category: "Digital Marketing Analyst", 
+    year: "2020",
+    slug: "tec",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2670&auto=format&fit=crop"
   }
 ];
 
@@ -69,7 +76,7 @@ export function FeaturesSection() {
           >
             Latest Experience.
           </motion.h2>
-          <span className="text-muted-foreground font-mono text-sm">( _07 )</span>
+          <span className="text-muted-foreground font-mono text-sm">( _08 )</span>
         </div>
 
         {/* Project Grid */}
