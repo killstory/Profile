@@ -370,17 +370,10 @@ export default function ExperienceDetail() {
               className="mt-12"
             >
               <h2 className="text-xl font-semibold text-foreground mb-6">Gallery</h2>
-              <div className={`${
-                experience.gallery.length === 1 
-                  ? 'flex justify-center' 
-                  : experience.gallery.length === 2 
-                  ? 'grid grid-cols-1 md:grid-cols-2 gap-6' 
-                  : 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'
-              }`}>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {experience.gallery.map((item, i) => {
                   const ImageWrapper = item.url ? 'a' : 'div';
                   const wrapperProps = item.url ? { href: item.url, target: "_blank", rel: "noopener noreferrer" } : {};
-                  const isSingleImage = experience.gallery.length === 1;
                   
                   return (
                     <motion.div
@@ -388,21 +381,21 @@ export default function ExperienceDetail() {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 1 + i * 0.1, duration: 0.4 }}
-                      className={isSingleImage ? 'w-full max-w-xl' : ''}
+                      className="h-full"
                     >
                       <ImageWrapper 
                         {...wrapperProps} 
-                        className={`group overflow-hidden rounded-xl border border-border block ${item.url ? 'cursor-pointer' : ''} hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10`}
+                        className={`group h-full flex flex-col overflow-hidden rounded-xl border border-border ${item.url ? 'cursor-pointer' : ''} hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10`}
                       >
-                        <div className={`${isSingleImage ? 'aspect-[4/3]' : 'aspect-video'} overflow-hidden bg-muted/20`}>
+                        <div className="aspect-square overflow-hidden bg-muted/20 flex items-center justify-center p-4">
                           <img
                             src={item.image}
                             alt={item.caption}
                             className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
                           />
                         </div>
-                        <div className="p-4 bg-muted/30 group-hover:bg-primary/5 transition-colors duration-300">
-                          <p className="text-center text-sm text-muted-foreground group-hover:text-foreground font-medium transition-colors">
+                        <div className="flex-1 flex items-center p-4 bg-muted/30 group-hover:bg-primary/5 transition-colors duration-300">
+                          <p className="text-center text-sm text-muted-foreground group-hover:text-foreground font-medium transition-colors w-full line-clamp-3">
                             {item.caption}
                           </p>
                         </div>
