@@ -1,11 +1,10 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, MapPin, Calendar } from "lucide-react";
 import { Link } from "react-router-dom";
 import spectreLabsCover from "@/assets/spectre-labs-cover.png";
 import amsFundCover from "@/assets/ams-fund-cover.png";
 import d1ckdaoCover from "@/assets/d1ckdao-cover.jpeg";
 import grvtCover from "@/assets/grvt-cover.jpg";
-import talusCover from "@/assets/talus-cover.jpeg";
 import talusThumbnail from "@/assets/talus-thumbnail.jpg";
 import aiatCover from "@/assets/aiat-cover.jpg";
 import tecCover from "@/assets/tec-cover.jpg";
@@ -21,6 +20,7 @@ interface Experience {
   image: string;
   isLogo?: boolean;
   logoStyle?: 'forru' | 'mahidol' | 'talus';
+  isPresent?: boolean;
 }
 
 // Sorted by date: Present first, then by start month (most recent first)
@@ -30,28 +30,32 @@ const experiences: Experience[] = [
     category: "Chief Investment Officer", 
     year: "Aug 2025 - Present",
     slug: "ams-fund",
-    image: amsFundCover
+    image: amsFundCover,
+    isPresent: true
   },
   { 
     title: "Spectre Labs", 
     category: "Co-Founder", 
     year: "Aug 2025 - Present",
     slug: "spectre-labs",
-    image: spectreLabsCover
+    image: spectreLabsCover,
+    isPresent: true
   },
   { 
     title: "D1ckDAO", 
     category: "AI Researcher", 
     year: "Aug 2025 - Present",
     slug: "d1ckdao",
-    image: d1ckdaoCover
+    image: d1ckdaoCover,
+    isPresent: true
   },
   { 
     title: "GRVT", 
     category: "Consultant", 
     year: "Jul 2025 - Present",
     slug: "grvt-exchange",
-    image: grvtCover
+    image: grvtCover,
+    isPresent: true
   },
   { 
     title: "Talus Labs", 
@@ -60,7 +64,8 @@ const experiences: Experience[] = [
     slug: "talus-labs",
     image: talusThumbnail,
     isLogo: true,
-    logoStyle: 'talus'
+    logoStyle: 'talus',
+    isPresent: true
   },
   { 
     title: "AIAT", 
@@ -106,7 +111,7 @@ const experiences: Experience[] = [
 export function FeaturesSection() {
   return (
     <section id="experience" className="bg-background px-6 md:px-12 py-24 lg:py-32">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         {/* Section Header */}
         <motion.h2
           className="text-5xl md:text-7xl font-bold text-foreground tracking-tighter mb-16"
@@ -118,80 +123,87 @@ export function FeaturesSection() {
           Experience<span className="text-primary">.</span>
         </motion.h2>
 
-        {/* Project Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-          {experiences.map((exp, i) => (
-            <motion.div
-              key={exp.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.6 }}
-              className="group cursor-scale"
-            >
-              {/* Image - Clickable */}
-              <Link to={`/experience/${exp.slug}`}>
-                <div className={`relative aspect-[4/3] overflow-hidden rounded-2xl mb-6 ${
-                  exp.logoStyle === 'forru' 
-                    ? 'bg-gradient-to-br from-emerald-50 to-green-100 flex items-center justify-center p-12 border border-border/50 shadow-inner' 
-                    : exp.logoStyle === 'mahidol'
-                    ? 'bg-gradient-to-br from-slate-50 to-blue-50 flex items-center justify-center p-10 border border-border/50 shadow-inner'
-                    : exp.logoStyle === 'talus'
-                    ? 'bg-gradient-to-br from-orange-50 to-amber-100 flex items-center justify-center p-8 border border-border/50 shadow-inner'
-                    : ''
-                }`}>
-                  <img
-                    src={exp.image}
-                    alt={exp.title}
-                    className={`${
-                      exp.logoStyle === 'mahidol'
-                        ? 'max-w-[55%] max-h-[55%] object-contain drop-shadow-lg'
+        {/* Timeline */}
+        <div className="relative">
+          {/* Timeline Line */}
+          <div className="absolute left-0 md:left-8 top-0 bottom-0 w-px bg-gradient-to-b from-primary/50 via-border to-border" />
+          
+          {/* Timeline Items */}
+          <div className="space-y-8">
+            {experiences.map((exp, i) => (
+              <motion.div
+                key={exp.title}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.05, duration: 0.4 }}
+                className="relative pl-8 md:pl-20"
+              >
+                {/* Timeline Dot */}
+                <div className={`absolute left-0 md:left-8 top-3 -translate-x-1/2 w-3 h-3 rounded-full border-2 ${
+                  exp.isPresent 
+                    ? 'bg-primary border-primary shadow-[0_0_12px_rgba(var(--primary),0.5)]' 
+                    : 'bg-background border-muted-foreground/50'
+                }`} />
+                
+                {/* Card */}
+                <Link to={`/experience/${exp.slug}`} className="group block">
+                  <div className="flex items-start gap-4 p-4 rounded-xl border border-transparent hover:border-border hover:bg-muted/30 transition-all duration-300">
+                    {/* Thumbnail */}
+                    <div className={`relative w-14 h-14 md:w-16 md:h-16 flex-shrink-0 rounded-lg overflow-hidden ${
+                      exp.logoStyle === 'forru' 
+                        ? 'bg-gradient-to-br from-emerald-50 to-green-100 p-2' 
+                        : exp.logoStyle === 'mahidol'
+                        ? 'bg-gradient-to-br from-slate-50 to-blue-50 p-2'
                         : exp.logoStyle === 'talus'
-                        ? 'max-w-[60%] max-h-[60%] object-contain drop-shadow-lg'
-                        : exp.isLogo 
-                        ? 'max-w-[65%] max-h-[65%] object-contain drop-shadow-lg' 
-                        : 'w-full h-full object-cover'
-                    } grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700`}
-                  />
-                  
-                  {/* Overlay on hover */}
-                  <div className={`absolute inset-0 ${
-                    exp.logoStyle === 'forru' 
-                      ? 'bg-emerald-500/0 group-hover:bg-emerald-500/10' 
-                      : exp.logoStyle === 'mahidol'
-                      ? 'bg-blue-500/0 group-hover:bg-blue-500/10'
-                      : exp.logoStyle === 'talus'
-                      ? 'bg-orange-500/0 group-hover:bg-orange-500/10'
-                      : 'bg-primary/0 group-hover:bg-primary/10'
-                  } transition-colors duration-500`} />
-                  
-                  {/* Arrow */}
-                  <div className={`absolute top-4 right-4 w-12 h-12 rounded-full ${
-                    exp.logoStyle === 'forru' 
-                      ? 'bg-emerald-700 text-white' 
-                      : exp.logoStyle === 'mahidol'
-                      ? 'bg-blue-900 text-amber-400'
-                      : exp.logoStyle === 'talus'
-                      ? 'bg-orange-600 text-white'
-                      : 'bg-foreground text-background'
-                  } flex items-center justify-center opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300`}>
-                    <ArrowUpRight className="w-5 h-5" />
+                        ? 'bg-gradient-to-br from-orange-50 to-amber-100 p-2'
+                        : ''
+                    }`}>
+                      <img
+                        src={exp.image}
+                        alt={exp.title}
+                        className={`${
+                          exp.isLogo 
+                            ? 'w-full h-full object-contain' 
+                            : 'w-full h-full object-cover'
+                        } grayscale group-hover:grayscale-0 transition-all duration-500`}
+                      />
+                    </div>
+                    
+                    {/* Content */}
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-start justify-between gap-2">
+                        <div className="min-w-0">
+                          <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors truncate">
+                            {exp.title}
+                          </h3>
+                          <p className="text-sm text-muted-foreground">{exp.category}</p>
+                        </div>
+                        
+                        {/* Arrow */}
+                        <div className="flex-shrink-0 w-8 h-8 rounded-full bg-muted flex items-center justify-center opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300">
+                          <ArrowUpRight className="w-4 h-4 text-foreground" />
+                        </div>
+                      </div>
+                      
+                      {/* Date Badge */}
+                      <div className="flex items-center gap-1.5 mt-2">
+                        <Calendar className="w-3.5 h-3.5 text-muted-foreground" />
+                        <span className={`text-xs font-mono ${exp.isPresent ? 'text-primary' : 'text-muted-foreground'}`}>
+                          {exp.year}
+                        </span>
+                        {exp.isPresent && (
+                          <span className="ml-1.5 px-1.5 py-0.5 text-[10px] font-medium bg-primary/10 text-primary rounded">
+                            Active
+                          </span>
+                        )}
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </Link>
-
-              {/* Info */}
-              <div className="flex items-start justify-between">
-                <div>
-                  <h3 className="text-2xl font-semibold text-foreground mb-1 group-hover:text-primary transition-colors">
-                    {exp.title}
-                  </h3>
-                  <p className="text-muted-foreground">{exp.category}</p>
-                </div>
-                <span className="text-muted-foreground font-mono text-sm">{exp.year}</span>
-              </div>
-            </motion.div>
-          ))}
+                </Link>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
