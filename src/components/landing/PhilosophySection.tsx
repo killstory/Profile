@@ -63,7 +63,7 @@ export function PhilosophySection() {
               Skills & Achievements
             </span>
           </div>
-          <h2 className="text-5xl md:text-7xl lg:text-8xl font-bold text-foreground tracking-tighter leading-[0.9]">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-tight leading-tight">
             Driven by{" "}
             <span className="font-serif italic text-primary">curiosity</span>.
           </h2>
