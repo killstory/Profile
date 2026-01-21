@@ -55,13 +55,15 @@ export function PhilosophySection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="flex items-center gap-3 mb-6">
-            <Sparkles className="w-5 h-5 text-primary" />
-            <span className="text-primary text-sm font-mono uppercase tracking-widest">
+          <div className="flex items-center gap-4 mb-8">
+            <div className="w-12 h-12 rounded-2xl bg-primary/20 flex items-center justify-center">
+              <Sparkles className="w-6 h-6 text-primary" />
+            </div>
+            <span className="text-primary text-lg md:text-xl font-mono uppercase tracking-widest font-semibold">
               Skills & Achievements
             </span>
           </div>
-          <h2 className="text-5xl md:text-7xl font-bold text-foreground tracking-tighter leading-[0.9]">
+          <h2 className="text-5xl md:text-7xl lg:text-8xl font-bold text-foreground tracking-tighter leading-[0.9]">
             Driven by{" "}
             <span className="font-serif italic text-primary">curiosity</span>.
           </h2>
@@ -75,7 +77,7 @@ export function PhilosophySection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h3 className="text-muted-foreground text-sm font-mono uppercase tracking-widest mb-8">
+          <h3 className="text-foreground text-xl md:text-2xl font-bold uppercase tracking-wide mb-10">
             Core Expertise
           </h3>
           <motion.div 
