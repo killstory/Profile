@@ -15,7 +15,6 @@ import talusSuiSeasonMeetup from '@/assets/talus-sui-season-meetup.jpeg';
 import mahidolPlenaryAward from '@/assets/mahidol-plenary-award.png';
 import mahidolTurfpagAward from '@/assets/mahidol-turfpag-award.png';
 import mahidolSingaporeAward from '@/assets/mahidol-singapore-award.png';
-import forruVolunteer1 from '@/assets/forru-volunteer-1.jpg';
 import forruVolunteer2 from '@/assets/forru-volunteer-2.jpg';
 import forruVolunteer3 from '@/assets/forru-volunteer-3.jpg';
 
@@ -37,7 +36,6 @@ const galleryItems = [
   { image: mahidolSingaporeAward, caption: "Singapore Symposium Award", slug: "mahidol-university" },
   { image: mahidolTurfpagAward, caption: "TURFPaG 1st Place Award", slug: "mahidol-university" },
   // FORRU
-  { image: forruVolunteer1, caption: "Volunteer staff at FORRU", slug: "forest-restoration" },
   { image: forruVolunteer2, caption: "Volunteer staff at FORRU", slug: "forest-restoration" },
   { image: forruVolunteer3, caption: "Volunteer staff at FORRU", slug: "forest-restoration" },
 ];
