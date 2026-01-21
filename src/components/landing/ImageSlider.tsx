@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 // Import all gallery images
 import d1ckdaoDesciSummit from '@/assets/d1ckdao-desci-summit.jpeg';
 import d1ckdaoDesciUncorked from '@/assets/d1ckdao-desci-uncorked.jpeg';
-import aiatCertificate from '@/assets/aiat-certificate.png';
+
 import aiatTeam from '@/assets/aiat-team.jpg';
 import grvtIrlMeetup from '@/assets/grvt-irl-meetup.png';
 import grvtEsportCompetition from '@/assets/grvt-esport-competition.jpeg';
@@ -31,7 +31,6 @@ const galleryItems = [
   { image: talusSuifestTeam, caption: "Talus Thailand Team in Suifest", slug: "talus-labs" },
   { image: talusSuiSeasonMeetup, caption: "Talus Thailand in Sui Season Meetup", slug: "talus-labs" },
   // AIAT
-  { image: aiatCertificate, caption: "Super AI Engineer Certificate", slug: "aiat" },
   { image: aiatTeam, caption: "My Super AI Engineer Team", slug: "aiat" },
   // Mahidol
   { image: mahidolPlenaryAward, caption: "Plenary Lecture Award", slug: "mahidol-university" },
