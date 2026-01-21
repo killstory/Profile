@@ -1,5 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
-import { FaXTwitter, FaGithub, FaLinkedin, FaTelegram } from "react-icons/fa6";
+import { FaXTwitter, FaGithub, FaLinkedin, FaTelegram, FaWhatsapp } from "react-icons/fa6";
 const socials = [{
   name: "LinkedIn",
   href: "https://www.linkedin.com/in/paramet-moonkaew",
@@ -12,6 +12,10 @@ const socials = [{
   name: "Telegram",
   href: "http://t.me/killstory789",
   icon: FaTelegram
+}, {
+  name: "WhatsApp",
+  href: "https://wa.link/eo3n58",
+  icon: FaWhatsapp
 }, {
   name: "GitHub",
   href: "https://github.com/killstory",
