@@ -66,7 +66,7 @@ export function HeroSection() {
               {firstName.split('').map((char, i) => (
                 <motion.span
                   key={`first-${i}`}
-                  className="inline-block"
+                  className="inline-block text-primary"
                   variants={letterAnim}
                 >
                   {char}
