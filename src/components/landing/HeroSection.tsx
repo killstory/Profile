@@ -27,7 +27,8 @@ const containerAnim = {
 };
 
 export function HeroSection() {
-  const title = "Paramet";
+  const firstName = "Paramet";
+  const lastName = "Moonkaew";
 
   return (
     <div className="relative w-full min-h-screen flex flex-col bg-background">
@@ -35,7 +36,7 @@ export function HeroSection() {
 
       {/* Hero Content */}
       <div className="flex-1 flex items-center justify-center px-6 md:px-12 py-12 md:py-20">
-        <div className="text-center max-w-4xl mx-auto">
+        <div className="text-center max-w-5xl mx-auto">
           {/* Profile Image */}
           <motion.div
             className="inline-block mb-8 md:mb-10"
@@ -52,20 +53,35 @@ export function HeroSection() {
             </div>
           </motion.div>
 
-          {/* Name Typography */}
+          {/* Full Name Typography */}
           <motion.div
-            className="overflow-hidden mb-3 md:mb-4"
+            className="overflow-hidden mb-6 md:mb-8"
             initial="initial"
             animate="animate"
             variants={containerAnim}
           >
             <motion.h1
-              className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-foreground"
+              className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground"
             >
-              {title.split('').map((char, i) => (
+              {firstName.split('').map((char, i) => (
                 <motion.span
-                  key={i}
+                  key={`first-${i}`}
                   className="inline-block"
+                  variants={letterAnim}
+                >
+                  {char}
+                </motion.span>
+              ))}
+              <motion.span
+                className="inline-block"
+                variants={letterAnim}
+              >
+                &nbsp;
+              </motion.span>
+              {lastName.split('').map((char, i) => (
+                <motion.span
+                  key={`last-${i}`}
+                  className="inline-block text-primary"
                   variants={letterAnim}
                 >
                   {char}
@@ -73,16 +89,6 @@ export function HeroSection() {
               ))}
             </motion.h1>
           </motion.div>
-
-          {/* Full Name Subtitle */}
-          <motion.p
-            className="text-lg md:text-xl text-muted-foreground font-medium mb-6 md:mb-8"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.6, duration: 0.8 }}
-          >
-            Moonkaew
-          </motion.p>
 
           {/* Subtitle Tags */}
           <motion.div
