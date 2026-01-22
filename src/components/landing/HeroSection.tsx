@@ -35,15 +35,15 @@ export function HeroSection() {
 
       {/* Hero Content */}
       <div className="flex-1 flex items-center justify-center px-6 md:px-12 py-12 md:py-20">
-        <div className="text-center max-w-6xl mx-auto">
+        <div className="text-center max-w-4xl mx-auto">
           {/* Profile Image */}
           <motion.div
-            className="inline-block mb-6 md:mb-10"
+            className="inline-block mb-8 md:mb-10"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
-            <div className="w-40 h-40 md:w-56 md:h-56 lg:w-72 lg:h-72 rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl ring-4 ring-background">
+            <div className="w-32 h-32 md:w-44 md:h-44 lg:w-52 lg:h-52 rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl ring-4 ring-background">
               <img
                 src={profileImage}
                 alt="Paramet Moonkaew"
@@ -52,15 +52,15 @@ export function HeroSection() {
             </div>
           </motion.div>
 
-          {/* Massive Typography */}
+          {/* Name Typography */}
           <motion.div
-            className="overflow-hidden mb-6 md:mb-8"
+            className="overflow-hidden mb-4 md:mb-6"
             initial="initial"
             animate="animate"
             variants={containerAnim}
           >
             <motion.h1
-              className="text-[15vw] md:text-[12vw] lg:text-[10vw] font-bold tracking-tighter leading-[0.85] text-foreground"
+              className="text-[14vw] md:text-[10vw] lg:text-[8vw] font-bold tracking-tighter leading-[0.9] text-foreground"
             >
               {title.split('').map((char, i) => (
                 <motion.span
@@ -72,7 +72,7 @@ export function HeroSection() {
                 </motion.span>
               ))}
               <motion.span
-                className="inline-block text-primary align-super text-[4vw] md:text-[3vw] font-normal ml-1 md:ml-2"
+                className="inline-block text-primary align-super text-[3vw] md:text-[2vw] font-normal ml-1"
                 variants={letterAnim}
               >
                 ®
@@ -80,29 +80,26 @@ export function HeroSection() {
             </motion.h1>
           </motion.div>
 
-          {/* Subtitle - Responsive Stack */}
+          {/* Subtitle Tags */}
           <motion.div
-            className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-0"
+            className="flex flex-wrap items-center justify-center gap-2 md:gap-3 mb-10 md:mb-12"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.8 }}
           >
-            <span className="text-sm md:text-base lg:text-lg text-foreground font-medium tracking-wide">
+            <span className="px-4 py-1.5 bg-muted/50 rounded-full text-sm md:text-base text-foreground font-medium">
               Strategic Capital Management
             </span>
-            <span className="hidden md:inline mx-4 text-primary text-lg">•</span>
-            <span className="text-sm md:text-base lg:text-lg text-foreground font-medium tracking-wide">
+            <span className="px-4 py-1.5 bg-muted/50 rounded-full text-sm md:text-base text-foreground font-medium">
               Web3 Advisory
             </span>
-            <span className="hidden md:inline mx-4 text-primary text-lg">•</span>
-            <span className="text-sm md:text-base lg:text-lg text-foreground font-medium tracking-wide">
+            <span className="px-4 py-1.5 bg-muted/50 rounded-full text-sm md:text-base text-foreground font-medium">
               AI Researcher
             </span>
           </motion.div>
 
           {/* CTA Button */}
           <motion.div
-            className="mt-10 md:mt-12"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.8 }}
@@ -115,9 +112,21 @@ export function HeroSection() {
             </a>
           </motion.div>
 
+          {/* Divider */}
+          <motion.div
+            className="mt-8 mb-6 flex items-center justify-center gap-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.1, duration: 0.6 }}
+          >
+            <div className="h-px w-12 bg-border" />
+            <span className="text-xs text-muted-foreground uppercase tracking-widest font-medium">Connect</span>
+            <div className="h-px w-12 bg-border" />
+          </motion.div>
+
           {/* Social Links */}
           <motion.div
-            className="mt-6 md:mt-8 flex flex-wrap justify-center gap-3"
+            className="flex flex-wrap justify-center gap-2 md:gap-3"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2, duration: 0.8 }}
@@ -128,12 +137,12 @@ export function HeroSection() {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-2 px-4 py-2.5 bg-muted/50 hover:bg-primary hover:text-primary-foreground rounded-full transition-all cursor-scale"
-                whileHover={{ scale: 1.05, y: -2 }}
+                className="group flex items-center justify-center w-10 h-10 md:w-11 md:h-11 bg-muted/50 hover:bg-primary hover:text-primary-foreground rounded-full transition-all cursor-scale"
+                whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
+                title={social.name}
               >
-                <social.icon className="w-4 h-4" />
-                <span className="text-sm font-medium">{social.name}</span>
+                <social.icon className="w-4 h-4 md:w-5 md:h-5" />
               </motion.a>
             ))}
           </motion.div>
