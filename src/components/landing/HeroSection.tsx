@@ -54,13 +54,13 @@ export function HeroSection() {
 
           {/* Name Typography */}
           <motion.div
-            className="overflow-hidden mb-4 md:mb-6"
+            className="overflow-hidden mb-3 md:mb-4"
             initial="initial"
             animate="animate"
             variants={containerAnim}
           >
             <motion.h1
-              className="text-[14vw] md:text-[10vw] lg:text-[8vw] font-bold tracking-tighter leading-[0.9] text-foreground"
+              className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-foreground"
             >
               {title.split('').map((char, i) => (
                 <motion.span
@@ -71,14 +71,18 @@ export function HeroSection() {
                   {char}
                 </motion.span>
               ))}
-              <motion.span
-                className="inline-block text-primary align-super text-[3vw] md:text-[2vw] font-normal ml-1"
-                variants={letterAnim}
-              >
-                ®
-              </motion.span>
             </motion.h1>
           </motion.div>
+
+          {/* Full Name Subtitle */}
+          <motion.p
+            className="text-lg md:text-xl text-muted-foreground font-medium mb-6 md:mb-8"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.6, duration: 0.8 }}
+          >
+            Moonkaew
+          </motion.p>
 
           {/* Subtitle Tags */}
           <motion.div
