@@ -1,7 +1,16 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Navigation } from "./Navigation";
+import { FaXTwitter, FaGithub, FaLinkedin, FaTelegram, FaWhatsapp } from "react-icons/fa6";
 import profileImage from "@/assets/paramet-profile.png";
+
+const socials = [
+  { name: "LinkedIn", href: "https://www.linkedin.com/in/paramet-moonkaew", icon: FaLinkedin },
+  { name: "X", href: "https://x.com/killstoryyy", icon: FaXTwitter },
+  { name: "Telegram", href: "http://t.me/killstory789", icon: FaTelegram },
+  { name: "WhatsApp", href: "https://wa.link/eo3n58", icon: FaWhatsapp },
+  { name: "GitHub", href: "https://github.com/killstory", icon: FaGithub },
+];
 
 const letterAnim = {
   initial: { y: "100%", opacity: 0 },
@@ -104,6 +113,29 @@ export function HeroSection() {
             >
               Get in Touch
             </a>
+          </motion.div>
+
+          {/* Social Links */}
+          <motion.div
+            className="mt-6 md:mt-8 flex flex-wrap justify-center gap-3"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.2, duration: 0.8 }}
+          >
+            {socials.map((social) => (
+              <motion.a
+                key={social.name}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-2 px-4 py-2.5 bg-muted/50 hover:bg-primary hover:text-primary-foreground rounded-full transition-all cursor-scale"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <social.icon className="w-4 h-4" />
+                <span className="text-sm font-medium">{social.name}</span>
+              </motion.a>
+            ))}
           </motion.div>
         </div>
       </div>
