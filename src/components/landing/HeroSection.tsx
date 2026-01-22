@@ -90,20 +90,22 @@ export function HeroSection() {
             </motion.h1>
           </motion.div>
 
-          {/* Subtitle Tags */}
+          {/* Subtitle with Bullets */}
           <motion.div
-            className="flex flex-wrap items-center justify-center gap-2 md:gap-3 mb-10 md:mb-12"
+            className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-0 mb-10 md:mb-12"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.8 }}
           >
-            <span className="px-4 py-1.5 bg-muted/50 rounded-full text-sm md:text-base text-foreground font-medium">
+            <span className="text-sm md:text-base lg:text-lg text-foreground font-medium tracking-wide">
               Strategic Capital Management
             </span>
-            <span className="px-4 py-1.5 bg-muted/50 rounded-full text-sm md:text-base text-foreground font-medium">
+            <span className="hidden md:inline mx-4 text-foreground text-xl">•</span>
+            <span className="text-sm md:text-base lg:text-lg text-foreground font-medium tracking-wide">
               Web3 Advisory
             </span>
-            <span className="px-4 py-1.5 bg-muted/50 rounded-full text-sm md:text-base text-foreground font-medium">
+            <span className="hidden md:inline mx-4 text-foreground text-xl">•</span>
+            <span className="text-sm md:text-base lg:text-lg text-foreground font-medium tracking-wide">
               AI Researcher
             </span>
           </motion.div>
