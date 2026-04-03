@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, Briefcase, FlaskConical, BarChart3, Users, Brain } from 'lucide-react';
+import { ArrowUpRight, Briefcase, FlaskConical, BarChart3, Brain } from 'lucide-react';
 
 // All current roles (Present) matching experiences
 const currentRoles = [
