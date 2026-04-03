@@ -54,12 +54,11 @@ const experiences: Experience[] = [{
 }, {
   title: "Talus Labs",
   category: "Regional Lead",
-  year: "Apr 2025 - Present",
+  year: "Apr 2025 - Mar 2026",
   slug: "talus-labs",
   image: talusThumbnail,
   isLogo: true,
-  logoStyle: 'talus',
-  isPresent: true
+  logoStyle: 'talus'
 }, {
   title: "AIAT",
   category: "AI Researcher",
