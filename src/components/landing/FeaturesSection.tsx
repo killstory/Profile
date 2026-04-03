@@ -52,12 +52,6 @@ const experiences: Experience[] = [{
   image: grvtCover,
   isPresent: true
 }, {
-  title: "AIAT",
-  category: "AI Researcher",
-  year: "Sep 2020 - Dec 2024",
-  slug: "aiat",
-  image: aiatCover
-}, {
   title: "Talus Labs",
   category: "Regional Lead",
   year: "Apr 2025 - Mar 2026",
