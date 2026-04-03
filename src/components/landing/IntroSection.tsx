@@ -33,13 +33,6 @@ const currentRoles = [
     slug: 'grvt-exchange',
     icon: Briefcase
   },
-  {
-    name: 'Talus Labs',
-    role: 'Regional Lead',
-    period: 'Apr 2025 - Present',
-    slug: 'talus-labs',
-    icon: Users
-  }
 ];
 
 export const IntroSection = () => {
