@@ -363,7 +363,21 @@ export default function ExperienceDetail() {
                   transition={{ delay: 0.5 + i * 0.1, duration: 0.4 }}
                 >
                   <span className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
-                  <span className="text-lg">{item}</span>
+                  {typeof item === "string" ? (
+                    <span className="text-lg">{item}</span>
+                  ) : (
+                    <div className="flex-1">
+                      <p className="text-lg text-foreground font-medium mb-3">{item.title}</p>
+                      <ul className="space-y-2 pl-1">
+                        {item.items.map((sub, j) => (
+                          <li key={j} className="flex items-start gap-3 text-muted-foreground">
+                            <span className="w-1.5 h-1.5 rounded-full bg-primary/60 mt-2.5 flex-shrink-0" />
+                            <span className="text-base">{sub}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </motion.li>
               ))}
             </ul>
