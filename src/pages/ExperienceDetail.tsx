@@ -36,7 +36,7 @@ const experienceDetails: Record<string, {
   location: string;
   image: string;
   description: string;
-  responsibilities: string[];
+  responsibilities: (string | { title: string; items: string[] })[];
   links?: { label: string; url: string }[];
   gallery?: { image: string; caption: string; url?: string }[];
 }> = {
@@ -49,7 +49,15 @@ const experienceDetails: Record<string, {
     description: "Invest and Build the Future at the Leading Edge of the Blockchain Space. Focused on Digital Assets, Venture Investment, Blockchain Infrastructure and Strategic Ecosystem growth.",
     responsibilities: [
       "Invest and partner or incubate protocols that align with Gulf's ecosystem",
-      "Operate Blockchain Infrastructure: Enterprise-grade validator operations, ZK-proof / modular compute infrastructure, High-performance workloads via Gulf's hyperscale datacenter and Tokenization infrastructure"
+      {
+        title: "Operate Blockchain Infrastructure",
+        items: [
+          "Enterprise-grade validator operations",
+          "ZK-proof / modular compute infrastructure",
+          "High-performance workloads via Gulf's hyperscale datacenter",
+          "Tokenization infrastructure"
+        ]
+      }
     ],
     links: [
       { label: "Gulf Labs Deck", url: "https://docs.google.com/presentation/d/1BOfXWO_Z3j8CUY79QUJHu5VdvtDZnsSsG_DC_GxOZ3U/edit?usp=sharing" }
@@ -355,7 +363,21 @@ export default function ExperienceDetail() {
                   transition={{ delay: 0.5 + i * 0.1, duration: 0.4 }}
                 >
                   <span className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
-                  <span className="text-lg">{item}</span>
+                  {typeof item === "string" ? (
+                    <span className="text-lg">{item}</span>
+                  ) : (
+                    <div className="flex-1">
+                      <p className="text-lg text-foreground font-medium mb-3">{item.title}</p>
+                      <ul className="space-y-2 pl-1">
+                        {item.items.map((sub, j) => (
+                          <li key={j} className="flex items-start gap-3 text-muted-foreground">
+                            <span className="w-1.5 h-1.5 rounded-full bg-primary/60 mt-2.5 flex-shrink-0" />
+                            <span className="text-base">{sub}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </motion.li>
               ))}
             </ul>
