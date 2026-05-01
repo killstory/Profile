@@ -36,7 +36,7 @@ const experienceDetails: Record<string, {
   location: string;
   image: string;
   description: string;
-  responsibilities: string[];
+  responsibilities: (string | { title: string; items: string[] })[];
   links?: { label: string; url: string }[];
   gallery?: { image: string; caption: string; url?: string }[];
 }> = {
