@@ -40,6 +40,24 @@ const experienceDetails: Record<string, {
   links?: { label: string; url: string }[];
   gallery?: { image: string; caption: string; url?: string }[];
 }> = {
+  "gulf-labs": {
+    title: "Gulf Labs",
+    role: "Digital Investment Analyst & Venture Partner",
+    period: "February 2026 - Present",
+    location: "Thailand",
+    image: gulfLabsCover,
+    description: "Invest and Build the Future at the Leading Edge of the Blockchain Space. Focused on Digital Assets, Venture Investment, Blockchain Infrastructure and Strategic Ecosystem growth.",
+    responsibilities: [
+      "Invest and partner or incubate protocols that align with Gulf's ecosystem",
+      "Operate Blockchain Infrastructure: Enterprise-grade validator operations",
+      "Operate Blockchain Infrastructure: ZK-proof / modular compute infrastructure",
+      "Operate Blockchain Infrastructure: High-performance workloads via Gulf's hyperscale datacenter",
+      "Operate Blockchain Infrastructure: Tokenization infrastructure"
+    ],
+    links: [
+      { label: "Gulf Labs Deck", url: "https://docs.google.com/presentation/d/1BOfXWO_Z3j8CUY79QUJHu5VdvtDZnsSsG_DC_GxOZ3U/edit?usp=sharing" }
+    ]
+  },
   "ams-fund": {
     title: "AMS FUND",
     role: "Chief Investment Officer",
