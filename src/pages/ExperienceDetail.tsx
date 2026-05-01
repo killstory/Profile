@@ -49,7 +49,15 @@ const experienceDetails: Record<string, {
     description: "Invest and Build the Future at the Leading Edge of the Blockchain Space. Focused on Digital Assets, Venture Investment, Blockchain Infrastructure and Strategic Ecosystem growth.",
     responsibilities: [
       "Invest and partner or incubate protocols that align with Gulf's ecosystem",
-      "Operate Blockchain Infrastructure: Enterprise-grade validator operations, ZK-proof / modular compute infrastructure, High-performance workloads via Gulf's hyperscale datacenter and Tokenization infrastructure"
+      {
+        title: "Operate Blockchain Infrastructure",
+        items: [
+          "Enterprise-grade validator operations",
+          "ZK-proof / modular compute infrastructure",
+          "High-performance workloads via Gulf's hyperscale datacenter",
+          "Tokenization infrastructure"
+        ]
+      }
     ],
     links: [
       { label: "Gulf Labs Deck", url: "https://docs.google.com/presentation/d/1BOfXWO_Z3j8CUY79QUJHu5VdvtDZnsSsG_DC_GxOZ3U/edit?usp=sharing" }
