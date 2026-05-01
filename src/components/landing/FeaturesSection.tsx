@@ -6,6 +6,7 @@ import amsFundCover from "@/assets/ams-fund-cover.png";
 import d1ckdaoCover from "@/assets/d1ckdao-cover.jpeg";
 import grvtCover from "@/assets/grvt-cover.jpg";
 import talusThumbnail from "@/assets/talus-thumbnail.jpg";
+import gulfLabsCover from "@/assets/gulf-labs-cover.png";
 import aiatCover from "@/assets/aiat-cover.jpg";
 import tecCover from "@/assets/tec-cover.jpg";
 import srichandCover from "@/assets/srichand-cover.jpg";
@@ -24,6 +25,15 @@ interface Experience {
 
 // Sorted by date: Present first, then by start month (most recent first)
 const experiences: Experience[] = [{
+  title: "Gulf Labs",
+  category: "Digital Investment Analyst & Venture Partner",
+  year: "Feb 2026 - Present",
+  slug: "gulf-labs",
+  image: gulfLabsCover,
+  isPresent: true,
+  isLogo: true,
+  logoStyle: 'gulf' as any
+}, {
   title: "AMS Fund",
   category: "Chief Investment Officer",
   year: "Aug 2025 - Present",
