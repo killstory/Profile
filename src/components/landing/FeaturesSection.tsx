@@ -6,6 +6,7 @@ import amsFundCover from "@/assets/ams-fund-cover.png";
 import d1ckdaoCover from "@/assets/d1ckdao-cover.jpeg";
 import grvtCover from "@/assets/grvt-cover.jpg";
 import talusThumbnail from "@/assets/talus-thumbnail.jpg";
+import gulfLabsCover from "@/assets/gulf-labs-cover.png";
 import aiatCover from "@/assets/aiat-cover.jpg";
 import tecCover from "@/assets/tec-cover.jpg";
 import srichandCover from "@/assets/srichand-cover.jpg";
@@ -18,12 +19,21 @@ interface Experience {
   slug: string;
   image: string;
   isLogo?: boolean;
-  logoStyle?: 'forru' | 'mahidol' | 'talus';
+  logoStyle?: 'forru' | 'mahidol' | 'talus' | 'gulf';
   isPresent?: boolean;
 }
 
 // Sorted by date: Present first, then by start month (most recent first)
 const experiences: Experience[] = [{
+  title: "Gulf Labs",
+  category: "Digital Investment Analyst & Venture Partner",
+  year: "Feb 2026 - Present",
+  slug: "gulf-labs",
+  image: gulfLabsCover,
+  isPresent: true,
+  isLogo: true,
+  logoStyle: 'gulf'
+}, {
   title: "AMS Fund",
   category: "Chief Investment Officer",
   year: "Aug 2025 - Present",
@@ -138,7 +148,7 @@ export function FeaturesSection() {
                 <Link to={`/experience/${exp.slug}`} className="group block">
                   <div className="flex items-center gap-5 md:gap-6 p-5 md:p-6 rounded-2xl border border-transparent hover:border-border hover:bg-muted/30 transition-all duration-300">
                     {/* Thumbnail */}
-                    <div className={`relative w-20 h-20 md:w-24 md:h-24 flex-shrink-0 rounded-xl overflow-hidden shadow-md ${exp.logoStyle === 'forru' ? 'bg-gradient-to-br from-emerald-50 to-green-100 p-3' : exp.logoStyle === 'mahidol' ? 'bg-gradient-to-br from-slate-50 to-blue-50 p-3' : exp.logoStyle === 'talus' ? 'bg-gradient-to-br from-orange-50 to-amber-100 p-3' : ''}`}>
+                    <div className={`relative w-20 h-20 md:w-24 md:h-24 flex-shrink-0 rounded-xl overflow-hidden shadow-md ${exp.logoStyle === 'forru' ? 'bg-gradient-to-br from-emerald-50 to-green-100 p-3' : exp.logoStyle === 'mahidol' ? 'bg-gradient-to-br from-slate-50 to-blue-50 p-3' : exp.logoStyle === 'talus' ? 'bg-gradient-to-br from-orange-50 to-amber-100 p-3' : exp.logoStyle === 'gulf' ? 'bg-gradient-to-br from-slate-50 to-emerald-50 p-3' : ''}`}>
                       <img src={exp.image} alt={exp.title} className={`${exp.isLogo ? 'w-full h-full object-contain' : 'w-full h-full object-cover'} grayscale group-hover:grayscale-0 transition-all duration-500`} />
                     </div>
                     
