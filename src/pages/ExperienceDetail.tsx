@@ -27,6 +27,7 @@ import tecCover from "@/assets/tec-cover.jpg";
 import srichandCover from "@/assets/srichand-cover.jpg";
 import forruCover from "@/assets/forru-cover.jpg";
 import mahidolCover from "@/assets/mahidol-cover.jpg";
+import gulfLabsCover from "@/assets/gulf-labs-cover.png";
 
 const experienceDetails: Record<string, {
   title: string;
