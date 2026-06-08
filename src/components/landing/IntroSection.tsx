@@ -1,12 +1,18 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, Briefcase, FlaskConical, BarChart3, Brain, Building2 } from 'lucide-react';
+import { ArrowUpRight, Briefcase, FlaskConical, BarChart3, Brain, Building2, Landmark } from 'lucide-react';
 
 // All current roles (Present) matching experiences
 const currentRoles = [
   {
-
+    name: 'Gulf Labs',
+    role: 'Partnership',
+    period: 'February 2026 - Present',
+    slug: 'gulf-labs',
+    icon: Landmark
+  },
+  {
     name: 'AMS Fund',
     role: 'Chief Investment Officer',
     period: 'Aug 2025 - Present',
