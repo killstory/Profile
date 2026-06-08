@@ -25,7 +25,15 @@ interface Experience {
 
 // Sorted by date: Present first, then by start month (most recent first)
 const experiences: Experience[] = [{
-
+  title: "Gulf Labs",
+  category: "Partnership",
+  year: "February 2026 - Present",
+  slug: "gulf-labs",
+  image: gulfLabsCover,
+  isLogo: true,
+  logoStyle: 'gulf',
+  isPresent: true
+}, {
   title: "AMS Fund",
   category: "Chief Investment Officer",
   year: "Aug 2025 - Present",
