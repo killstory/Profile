@@ -42,7 +42,7 @@ const experienceDetails: Record<string, {
 }> = {
   "gulf-labs": {
     title: "Gulf Labs",
-    role: "Digital Investment Analyst & Venture Partner",
+    role: "Partnership",
     period: "February 2026 - Present",
     location: "Thailand",
     image: gulfLabsCover,
