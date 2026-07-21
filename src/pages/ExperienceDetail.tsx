@@ -71,13 +71,13 @@ const experienceDetails: Record<string, {
     image: amsFundCover,
     description: "AMS Fund is a private investment fund operated by our family office.",
     responsibilities: [
-      "Oversee strategic fund management operations, delivering consistent and risk adjusted performance in decentralized finance markets.",
+      "Manage strategic fund operations totaling over $10M, delivering consistent and risk adjusted performance in decentralized finance markets.",
       "Lead capital allocation across yield stablecoin farming, liquidity provisioning, and protocol revenue share models to maximize capital efficiency.",
       "Establish robust risk management governance and systematic hedging mechanisms to safeguard principal and ensure operational resilience.",
       "Committed to driving innovation, transparency, and institutional standards within the evolving global DeFi and digital asset ecosystem."
     ],
     links: [
-      { label: "AMS Fund Deck", url: "https://www.canva.com/design/DAG3iZln6OE/9YPMKWfTUHgAYFYr0GMYfQ/edit?utm_content=DAG3iZln6OE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" }
+      { label: "AMS Fund Deck", url: "https://canva.link/amsfund" }
     ]
   },
   "spectre-labs": {
